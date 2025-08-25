@@ -4,7 +4,7 @@ namespace SistemaEducativoADB.API2.Services.Interfaces
 {
     public interface IAsistenciaService
     {
-        Task<IEnumerable<Asistencia>> GetAllAsistencias();
+        Task<IEnumerable<Asistencia>> GetAllAsistencia();
         Task<Asistencia> GetAsistenciaById(int id);
         Task AddAsistencia(Asistencia asistencia);
         Task UpdateAsistencia(Asistencia asistencia);

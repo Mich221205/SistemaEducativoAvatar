@@ -11,7 +11,7 @@ public class Asistencia
     public DateTime Fecha { get; set; } = DateTime.Now;
 
     // Relaciones opcionales (si usas navegación)
-    public Grupo Grupo { get; set; }
+    //public Grupo Grupo { get; set; }
     public Profesor Profesor { get; set; }
     public Estudiante Estudiante { get; set; }
 }

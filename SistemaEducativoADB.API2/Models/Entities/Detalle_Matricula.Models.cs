@@ -11,8 +11,8 @@ namespace SistemaEducativoADB.API2.Models.Entities
         public string Condicion { get; set; }  
 
       
-        public Matricula Matricula { get; set; } 
-        public Grupo Grupo { get; set; }        
+        //public Matricula Matricula { get; set; } 
+        //public Grupo Grupo { get; set; }        
     }
 }
 

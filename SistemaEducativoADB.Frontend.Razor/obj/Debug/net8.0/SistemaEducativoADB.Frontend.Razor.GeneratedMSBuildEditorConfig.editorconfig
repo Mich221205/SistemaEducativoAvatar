@@ -9,201 +9,201 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SistemaEducativoADB.Frontend.Razor
 build_property.RootNamespace = SistemaEducativoADB.Frontend.Razor
-build_property.ProjectDir = C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\
+build_property.ProjectDir = C:\Users\edtlu\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor
+build_property.MSBuildProjectDirectory = C:\Users\edtlu\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Carrera/Index.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Carrera/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FycmVyYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Error.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/ActivarCuentas.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/ActivarCuentas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxBY3RpdmFyQ3VlbnRhcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/AsignarMateriasProfes.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/AsignarMateriasProfes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxBc2lnbmFyTWF0ZXJpYXNQcm9mZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/CitaMatricula.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/CitaMatricula.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxDaXRhTWF0cmljdWxhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/DeudasPendientes.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/DeudasPendientes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxEZXVkYXNQZW5kaWVudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/GruposHorarios.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/GruposHorarios.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxHcnVwb3NIb3Jhcmlvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/Index_administrador.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/Index_administrador.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxJbmRleF9hZG1pbmlzdHJhZG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/PagosRealizados.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/PagosRealizados.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxQYWdvc1JlYWxpemFkb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/RecuperarContrasenna.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/RecuperarContrasenna.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxSZWN1cGVyYXJDb250cmFzZW5uYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/ReporteMatricula.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/ReporteMatricula.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxSZXBvcnRlTWF0cmljdWxhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/ReportesEstuActivos.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/ReportesEstuActivos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxSZXBvcnRlc0VzdHVBY3Rpdm9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/ActualizarDatos.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/ActualizarDatos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcQWN0dWFsaXphckRhdG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/Ausencias.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/Ausencias.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcQXVzZW5jaWFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/BoletasMatricula.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/BoletasMatricula.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcQm9sZXRhc01hdHJpY3VsYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/CancelarDeudas.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/CancelarDeudas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcQ2FuY2VsYXJEZXVkYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/ConfirmacionMatricula.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/ConfirmacionMatricula.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcQ29uZmlybWFjaW9uTWF0cmljdWxhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/Financiero.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/Financiero.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcRmluYW5jaWVyby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/FinancieroDeudas.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/FinancieroDeudas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcRmluYW5jaWVyb0RldWRhcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/HistorialPagos.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/HistorialPagos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcSGlzdG9yaWFsUGFnb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/Index_estudiante.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/Index_estudiante.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcSW5kZXhfZXN0dWRpYW50ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/Matricular.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/Matricular.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcTWF0cmljdWxhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/NotasPeriodo.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/NotasPeriodo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcTm90YXNQZXJpb2RvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/ParametrosMatricula.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/ParametrosMatricula.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcUGFyYW1ldHJvc01hdHJpY3VsYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/RecordAcademico.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/RecordAcademico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcUmVjb3JkQWNhZGVtaWNvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/SeleccionCursos.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/SeleccionCursos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcU2VsZWNjaW9uQ3Vyc29zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/ServicioEstudiante.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/estudiantes/ServicioEstudiante.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcZXN0dWRpYW50ZXNcU2VydmljaW9Fc3R1ZGlhbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/login.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcbG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/ActualizarDatos.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/ActualizarDatos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcQWN0dWFsaXphckRhdG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/Ausencias.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/Ausencias.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcQXVzZW5jaWFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/EstadoAcademico.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/EstadoAcademico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcRXN0YWRvQWNhZGVtaWNvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/Grupos.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/Grupos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcR3J1cG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/HistorialGrupos.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/HistorialGrupos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcSGlzdG9yaWFsR3J1cG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/Index_Profesor.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/Index_Profesor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcSW5kZXhfUHJvZmVzb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/Listas.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/Listas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcTGlzdGFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/Registrar.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/Registrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcUmVnaXN0cmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/RegistrarNotas.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/RegistrarNotas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcUmVnaXN0cmFyTm90YXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/VerNotas.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/VerNotas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcVmVyTm90YXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Privacy.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/Index.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/_LayoutAdministrador.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/_LayoutAdministrador.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRBZG1pbmlzdHJhZG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/_LayoutEstudiante.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/_LayoutEstudiante.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRFc3R1ZGlhbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/_LayoutProfesor.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/_LayoutProfesor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRQcm9mZXNvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/_ViewImports.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/_ViewStart.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/_Layout.cshtml]
+[C:/Users/edtlu/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vragyeu1so

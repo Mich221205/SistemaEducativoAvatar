@@ -10,8 +10,8 @@ public class Asistencia
     public bool eAsistencia { get; set; }  
     public DateTime Fecha { get; set; } = DateTime.Now;
 
-    // Relaciones opcionales (si usas navegación)
-    //public Grupo Grupo { get; set; }
-    public Profesor Profesor { get; set; }
-    public Estudiante Estudiante { get; set; }
+    
+    public Grupo? Grupo { get; set; }
+    public Profesor? Profesor { get; set; }
+    public Estudiante? Estudiante { get; set; }
 }

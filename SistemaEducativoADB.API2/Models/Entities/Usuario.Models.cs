@@ -17,6 +17,8 @@ namespace SistemaEducativoADB.API2.Models.Entities
 
         public Estudiante Estudiante { get; set; }
         public Profesor Profesor { get; set; }
+        public int? IdRol { get; set; }
+        public Rol? Rol { get; set; }
     }
 
 }

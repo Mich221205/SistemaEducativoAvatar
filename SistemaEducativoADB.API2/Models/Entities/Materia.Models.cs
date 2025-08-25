@@ -8,8 +8,6 @@
         public string Nombre { get; set; } // nombre
         public int Creditos { get; set; }  // creditos
         public int? IdPlan { get; set; }   // id_plan (nullable por si no tiene plan asignado)
-
-        // Relación con PlanEstudio (si se maneja la entidad)
-        //public PlanEstudio PlanEstudio { get; set; }
+        public Plan_Estudio? PlanEstudio { get; set; }
     }
     }

@@ -26,6 +26,15 @@ builder.Services.AddScoped<IBitacoraRepository, BitacoraRepository>();
 builder.Services.AddScoped<ICita_MatriculaRepository, Cita_MatriculaRepository>();
 builder.Services.AddScoped<ICorrequisitoRepository, CorrequisitoRepository>();
 builder.Services.AddScoped<IDetalle_MatriculaRepository, Detalle_MatriculaRepository>();
+builder.Services.AddScoped<IDetalle_PagosRepository, Detalle_PagosRepository>();
+builder.Services.AddScoped<IPeriodo_LectivoRepository, Periodo_LectivoRepository>();
+builder.Services.AddScoped<IPlan_EstudioRepository, Plan_EstudioRepository>();
+builder.Services.AddScoped<IRequisitosRepository, RequisitosRepository>();
+builder.Services.AddScoped<IRolesRepository, RolesRepository>();
+builder.Services.AddScoped<IGruposRepository, GruposRepository>();
+builder.Services.AddScoped<IHorariosRepository, HorariosRepository>();
+builder.Services.AddScoped<IMatriculaRepository, MatriculaRepository>();
+builder.Services.AddScoped<IPagosRepository, PagosRepository>();
 
 // Services
 builder.Services.AddScoped<IEstudianteService, EstudianteService>();
@@ -38,6 +47,15 @@ builder.Services.AddScoped<IBitacoraService, BitacoraService>();
 builder.Services.AddScoped<ICita_MatriculaService, Cita_MatriculaService>();
 builder.Services.AddScoped<ICorrequisitoService, CorrequisitoService>();
 builder.Services.AddScoped<IDetalle_MatriculaService, Detalle_MatriculaService>();
+builder.Services.AddScoped<IDetalle_PagosService, Detalle_PagosService>();
+builder.Services.AddScoped<IPeriodo_LectivoService, Periodo_LectivoService>();
+builder.Services.AddScoped<IPlan_EstudioService, Plan_EstudioService>();
+builder.Services.AddScoped<IRequisitosService, RequisitosService>();
+builder.Services.AddScoped<IRolesService, RolesService>();
+builder.Services.AddScoped<IGruposService, GruposService>();
+builder.Services.AddScoped<IHorariosService, HorariosService>();
+builder.Services.AddScoped<IMatriculaService, MatriculaService>();
+builder.Services.AddScoped<IPagosService, PagosService>();
 
 // Configuración CORS
 builder.Services.AddCors(options =>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaEducativoADB.API2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f87ad26f14ca85941fd83144106a4245f7dd45e8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5215014451fe7378e10b7c86aa051c3b5101797")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaEducativoADB.API2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaEducativoADB.API2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

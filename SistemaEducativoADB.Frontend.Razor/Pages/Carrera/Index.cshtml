@@ -1,34 +1,139 @@
 ﻿@page
 @model SistemaEducativoADB.Frontend.Razor.Pages.Carreras.IndexModel
 @{
-    ViewData["Title"] = "Carreras";
+    ViewData["Title"] = "Gestión de Carreras";
 }
 
-<h2>Carreras</h2>
+<h2>Listado de Carreras</h2>
 
-<table class="table">
+<table id="carrerasTable" class="table table-bordered">
     <thead>
         <tr>
             <th>ID</th>
-            <th>Nombre</th>
+            <th>Nombre Carrera</th>
+            <th>Acción</th>
         </tr>
     </thead>
     <tbody>
-        @if (Model.Carreras != null && Model.Carreras.Any())
-        {
-            foreach (var carrera in Model.Carreras)
-            {
-                <tr>
-                    <td>@carrera.IdCarrera</td>
-                    <td>@carrera.NombreCarrera</td>
-                </tr>
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="2">No hay datos disponibles</td>
-            </tr>
-        }
+        <!-- acaa se llena por ajax
     </tbody>
 </table>
+
+<div class="mb-3">
+    <label class="form-label"><strong>Carrera</strong></label>
+    <select id="ddlCarreras" class="form-select">
+        <option value="">-- Seleccione una carrera --</option>
+    </select>
+</div>
+
+
+<button id="btnVerCarrera" class="btn btn-primary">Ver Carrera Seleccionada</button>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            //  Función para cargar carreras en la tabla
+            function cargarTabla() {
+                $.ajax({
+                    url: "https://localhost:7076/api/Carreras",
+                    method: "GET",
+                    success: function (data) {
+                        var $tbody = $("#carrerasTable tbody");
+                        $tbody.empty(); 
+
+                        $.each(data, function (i, carrera) {
+                            var fila = `
+                                <tr data-id="${carrera.idCarrera}">
+                                    <td>${carrera.idCarrera}</td>
+                                    <td>
+                                        <input type="text" class="form-control" value="${carrera.nombreCarrera}" />
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm btnActualizar">Actualizar</button>
+                                        <button class="btn btn-danger btn-sm btnEliminar">Eliminar</button>
+                                    </td>
+                                </tr>
+                            `;
+                            $tbody.append(fila);
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error al cargar tabla:", error);
+                    }
+                });
+            }
+
+            //Llamamos a la carga inicial
+            cargarTabla();
+
+            //  Cargar carreras en el dropdown
+            $.ajax({
+                url: "https://localhost:7076/api/Carreras",
+                method: "GET",
+                success: function (data) {
+                    var $ddl = $("#ddlCarreras");
+                    $.each(data, function (i, carrera) {
+                        $ddl.append($("<option>", {
+                            value: carrera.idCarrera,
+                            text: carrera.nombreCarrera
+                        }));
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error al cargar carreras en dropdown:", error);
+                }
+            });
+
+            //  Botón para ver carrera seleccionada
+            $("#btnVerCarrera").click(function () {
+                var idCarrera = $("#ddlCarreras").val();
+                var nombreCarrera = $("#ddlCarreras option:selected").text();
+                alert("Seleccionaste: " + nombreCarrera + " (ID: " + idCarrera + ")");
+            });
+
+            //evnto actualizar
+            $(document).on("click", ".btnActualizar", function () {
+                var $fila = $(this).closest("tr");
+                var id = $fila.data("id");
+                var nombre = $fila.find("input").val();
+
+                $.ajax({
+                    url: "https://localhost:7076/api/Carreras/" + id,
+                    method: "PUT",
+                    contentType: "application/json",
+                    data: JSON.stringify({ idCarrera: id, nombreCarrera: nombre }),
+                    success: function () {
+                        alert("Carrera actualizada correctamente.");
+                        cargarTabla(); // refrescamos la tabla
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error al actualizar:", error);
+                    }
+                });
+            });
+
+            
+            $(document).on("click", ".btnEliminar", function () {
+                var $fila = $(this).closest("tr");
+                var id = $fila.data("id");
+
+                if (!confirm("¿Seguro que deseas eliminar esta carrera?")) return;
+
+                $.ajax({
+                    url: "https://localhost:7076/api/Carreras/" + id,
+                    method: "DELETE",
+                    success: function () {
+                        alert("Carrera eliminada correctamente.");
+                        cargarTabla(); 
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error al eliminar:", error);
+                    }
+                });
+            });
+
+        });
+    </script>
+}

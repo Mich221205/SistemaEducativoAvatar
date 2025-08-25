@@ -1,0 +1,45 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.profesor.RegistrarNotasModel
+@{
+    Layout = "_LayoutProfesor";
+    ViewData["Title"] = "Registrar Notas";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Registrar Notas</h2>
+
+    <div class="card shadow-lg p-4">
+        <form method="post">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Carné</th>
+                        <th>Nombre</th>
+                        <th>Materia</th>
+                        <th>Grupo</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025001</td>
+                        <td>Ana López</td>
+                        <td>Programación I</td>
+                        <td>G-101</td>
+                        <td><input type="number" class="form-control" min="0" max="100" /></td>
+                    </tr>
+                    <tr>
+                        <td>2025002</td>
+                        <td>Carlos Méndez</td>
+                        <td>Programación I</td>
+                        <td>G-101</td>
+                        <td><input type="number" class="form-control" min="0" max="100" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-end">
+                <button type="submit" class="btn btn-success">Guardar Notas</button>
+            </div>
+        </form>
+    </div>
+</div>

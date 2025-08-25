@@ -1,0 +1,46 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.administrador.RecuperarContrasennaModel
+@{
+    Layout = "_LayoutAdministrador";
+    ViewData["Title"] = "Recuperación de Contraseña";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Solicitudes de Recuperación de Contraseña</h2>
+
+    <div class="card shadow-lg p-4">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Usuario</th>
+                    <th>Correo</th>
+                    <th>Fecha de Solicitud</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ejemplo -->
+                <tr>
+                    <td>2025001</td>
+                    <td>juan.perez@cuc.ac.cr</td>
+                    <td>2025-08-20</td>
+                    <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-success">Restablecer</button>
+                        <button class="btn btn-sm btn-danger">Rechazar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>prof.maria</td>
+                    <td>maria.gomez@cuc.ac.cr</td>
+                    <td>2025-08-19</td>
+                    <td><span class="badge bg-success">Completado</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-secondary" disabled>No disponible</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

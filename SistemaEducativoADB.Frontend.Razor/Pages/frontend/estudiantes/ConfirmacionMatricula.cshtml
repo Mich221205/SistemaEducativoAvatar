@@ -1,0 +1,46 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.estudiantes.ConfirmacionMatriculaModel
+@{
+    Layout = "_LayoutEstudiante";
+    ViewData["Title"] = "Confirmación de Matrícula";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Confirmación de Matrícula</h2>
+
+    <table class="table table-bordered shadow-lg">
+        <thead class="table-dark">
+            <tr>
+                <th>Código</th>
+                <th>Materia</th>
+                <th>Grupo</th>
+                <th>Horario</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>INF101</td>
+                <td>Programación I</td>
+                <td>01</td>
+                <td>Lunes y Miércoles 8:00 - 10:00</td>
+                <td>₡80,000</td>
+            </tr>
+            <tr>
+                <td>INF202</td>
+                <td>Bases de Datos</td>
+                <td>02</td>
+                <td>Martes y Jueves 10:00 - 12:00</td>
+                <td>₡100,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4 class="text-end">Total a Pagar: ₡180,000</h4>
+
+    <div class="text-end">
+        <a class="btn btn-secondary" href="/Frontend/estudiantes/SeleccionCursos">Anterior</a>
+        <a class="btn btn-primary" href="/Frontend/estudiantes/Financiero">Ir a Pago</a>
+
+    </div>
+</div>

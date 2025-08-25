@@ -1,0 +1,47 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.profesor.RegistrarModel
+@{
+    Layout = "_LayoutProfesor";
+    ViewData["Title"] = "Registrar Asistencia";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Registrar Asistencia</h2>
+
+    <div class="card shadow-lg p-4">
+        <form method="post">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Carné</th>
+                        <th>Nombre</th>
+                        <th>Asistencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025001</td>
+                        <td>Ana López</td>
+                        <td>
+                            <select class="form-select">
+                                <option>Presente</option>
+                                <option>Ausente</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2025002</td>
+                        <td>Carlos Méndez</td>
+                        <td>
+                            <select class="form-select">
+                                <option>Presente</option>
+                                <option>Ausente</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-success">Guardar Asistencia</button>
+        </form>
+    </div>
+</div>

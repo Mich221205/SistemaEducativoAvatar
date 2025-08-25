@@ -1,0 +1,43 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.profesor.ListasModel
+@{
+    Layout = "_LayoutProfesor";
+    ViewData["Title"] = "Lista de Estudiantes";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Lista de Estudiantes</h2>
+
+    <div class="card shadow-lg p-4">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Carné</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025001</td>
+                    <td>Ana López</td>
+                    <td>ana.lopez@cuc.ac.cr</td>
+                    <td>8888-1111</td>
+                </tr>
+                <tr>
+                    <td>2025002</td>
+                    <td>Carlos Méndez</td>
+                    <td>carlos.mendez@cuc.ac.cr</td>
+                    <td>8888-2222</td>
+                </tr>
+                <tr>
+                    <td>2025003</td>
+                    <td>Laura Jiménez</td>
+                    <td>laura.jimenez@cuc.ac.cr</td>
+                    <td>8888-3333</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.administrador.GruposHorariosModel
+@{
+    Layout = "_LayoutAdministrador";
+    ViewData["Title"] = "Gestión Académica - Grupos y Horarios";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Gestión de Grupos y Horarios</h2>
+
+    <!-- Formulario para crear un grupo -->
+    <div class="card shadow-lg p-4 mb-4">
+        <h5>Registrar nuevo grupo</h5>
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label class="form-label"><strong>Código del Grupo</strong></label>
+                    <input type="text" class="form-control" name="codigo" placeholder="Ej: G101" />
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label"><strong>Curso</strong></label>
+                    <select class="form-select" name="curso">
+                        <option value="">Seleccione un curso</option>
+                        <option>Matemática I</option>
+                        <option>Programación I</option>
+                        <option>Base de Datos</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label"><strong>Profesor</strong></label>
+                    <select class="form-select" name="profesor">
+                        <option value="">Seleccione un profesor</option>
+                        <option>Prof. Ana López</option>
+                        <option>Prof. Carlos Méndez</option>
+                        <option>Prof. María Gómez</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label"><strong>Día</strong></label>
+                    <select class="form-select" name="dia">
+                        <option>Lunes</option>
+                        <option>Martes</option>
+                        <option>Miércoles</option>
+                        <option>Jueves</option>
+                        <option>Viernes</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label"><strong>Hora Inicio</strong></label>
+                    <input type="time" class="form-control" name="horaInicio" />
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label"><strong>Hora Fin</strong></label>
+                    <input type="time" class="form-control" name="horaFin" />
+                </div>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-success">Guardar Grupo</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Tabla de grupos ya registrados -->
+    <div class="card shadow-lg p-4">
+        <h5>Listado de Grupos</h5>
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Código</th>
+                    <th>Curso</th>
+                    <th>Profesor</th>
+                    <th>Día</th>
+                    <th>Horario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ejemplo de datos quemados -->
+                <tr>
+                    <td>G101</td>
+                    <td>Matemática I</td>
+                    <td>Prof. Ana López</td>
+                    <td>Lunes</td>
+                    <td>08:00 - 10:00</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning">Editar</button>
+                        <button class="btn btn-sm btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>G202</td>
+                    <td>Programación I</td>
+                    <td>Prof. Carlos Méndez</td>
+                    <td>Martes</td>
+                    <td>10:00 - 12:00</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning">Editar</button>
+                        <button class="btn btn-sm btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

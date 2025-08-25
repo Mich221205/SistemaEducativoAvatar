@@ -1,0 +1,53 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.estudiantes.FinancieroDeudasModel
+@{
+    Layout = "_LayoutEstudiante";
+    ViewData["Title"] = "Financiero - Deudas";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Módulo Financiero - Cancelar Deudas</h2>
+
+    <div class="card shadow-lg p-4">
+        <h5>Datos del Estudiante</h5>
+        <p><strong>Carné:</strong> 2025001</p>
+        <p><strong>Nombre:</strong> Juan Pérez</p>
+        <hr />
+
+        <h5>Deudas Seleccionadas</h5>
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Factura</th>
+                    <th>Descripción</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>F001</td>
+                    <td>Curso Programación I</td>
+                    <td>₡80,000</td>
+                </tr>
+                <tr>
+                    <td>F002</td>
+                    <td>Curso Bases de Datos</td>
+                    <td>₡100,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="mb-3">
+            <label class="form-label">Método de Pago</label>
+            <select class="form-select">
+                <option>Tarjeta de Crédito</option>
+                <option>Tarjeta de Débito</option>
+                <option>Transferencia Bancaria</option>
+            </select>
+        </div>
+
+        <a href="/Frontend/estudiantes/CancelarDeudas" class="btn btn-secondary">Anterior</a>
+        <a href="/Frontend/estudiantes/RegistrarPago" class="btn btn-success">Proceder a Pago</a>
+    </div>
+</div>
+

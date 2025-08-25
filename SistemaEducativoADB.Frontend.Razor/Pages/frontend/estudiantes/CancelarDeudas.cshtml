@@ -1,0 +1,49 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.estudiantes.CancelarDeudasModel
+@{
+    Layout = "_LayoutEstudiante";
+    ViewData["Title"] = "Cancelar Deudas";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Cancelar Deudas</h2>
+
+    <div class="card shadow-lg p-4">
+        <h5>Deudas Pendientes</h5>
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Factura</th>
+                    <th>Descripción</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>F001</td>
+                    <td>Curso Programación I</td>
+                    <td>₡80,000</td>
+                    <td><span class="badge bg-danger">Pendiente</span></td>
+                    <td>
+                        <a href="/Frontend/estudiantes/FinancieroDeudas" class="btn btn-sm btn-primary">
+                            Seleccionar
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>F002</td>
+                    <td>Curso Bases de Datos</td>
+                    <td>₡100,000</td>
+                    <td><span class="badge bg-danger">Pendiente</span></td>
+                    <td>
+                        <a href="/Frontend/estudiantes/FinancieroDeudas" class="btn btn-sm btn-primary">
+                            Seleccionar
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

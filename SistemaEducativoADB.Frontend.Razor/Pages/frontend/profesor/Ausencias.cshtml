@@ -1,0 +1,43 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.profesor.AusenciasModel
+@{
+    Layout = "_LayoutProfesor";
+    ViewData["Title"] = "Ausencias";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Ausencias de Estudiantes</h2>
+
+    <div class="card shadow-lg p-4">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Carné</th>
+                    <th>Nombre</th>
+                    <th>Materia</th>
+                    <th>Grupo</th>
+                    <th>Ausencias</th>
+                    <th>Porcentaje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025001</td>
+                    <td>Ana López</td>
+                    <td>Programación I</td>
+                    <td>G-101</td>
+                    <td>2</td>
+                    <td>6%</td>
+                </tr>
+                <tr>
+                    <td>2025002</td>
+                    <td>Carlos Méndez</td>
+                    <td>Bases de Datos</td>
+                    <td>G-205</td>
+                    <td>4</td>
+                    <td>12%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

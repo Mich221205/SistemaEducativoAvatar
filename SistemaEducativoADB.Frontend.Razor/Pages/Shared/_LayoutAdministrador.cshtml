@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>HOME</title>
+    <link rel="icon" type="image/x-icon" href="~/assets/favicon.ico" />
+
+    <!-- Font Awesome icons -->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="~/css/stylemenuEstudiante.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" asp-page="/Index">
+                <img src="~/images/logo.png" alt="Logo" style="height: 8rem;" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+
+                    <!-- Gestión Académica -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="academicaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gestión Académica
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="academicaDropdown">
+                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/Grupos">Grupos Asignados</a></li>
+                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/Listas">Lista de Estudiantes</a></li>
+                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/Registrar">Registrar Asistencia</a></li>
+                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/Ausencias">Ver Ausencias</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Gestión de Notas -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="notasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gestión de Notas
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="notasDropdown">
+                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/RegistrarNotas">Registrar Notas</a></li>
+                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/EstadoAcademico">Ver Estado Académico de Grupos</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Comunicación y Reportes -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Comunicación y Reportes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
+                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/VerNotas">Ver Notas</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Perfil del Profesor -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Perfil del Profesor
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="perfilDropdown">
+                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/ActualizarDatos">Actualizar Datos Personales</a></li>
+                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/HistorialGrupos">Consultar Historial de Grupos Impartidos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('@Url.Content("~/images/home-bg.png")')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Avatar Profesores - Colegio Universitario de Cartago</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="small text-center text-muted fst-italic">Derechos Reservados &copy; Avatar 2025</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/scripts.js"></script>
+</body>
+</html>

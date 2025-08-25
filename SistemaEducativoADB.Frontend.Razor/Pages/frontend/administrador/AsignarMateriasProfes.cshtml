@@ -1,0 +1,63 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.administrador.AsignarMateriasProfesModel
+@{
+    Layout = "_LayoutAdministrador";
+    ViewData["Title"] = "Gestión de Profesores - Asignar Materias";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Asignar Materias a Profesores</h2>
+
+    <div class="card shadow-lg p-4 mb-4">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Profesor</label>
+                    <select class="form-select" asp-for="Profesor">
+                        <option value="">Seleccione un profesor</option>
+                        <option>Ana López</option>
+                        <option>Carlos Méndez</option>
+                        <option>María Gómez</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Materia</label>
+                    <select class="form-select" asp-for="Materia">
+                        <option value="">Seleccione una materia</option>
+                        <option>Matemática I</option>
+                        <option>Programación I</option>
+                        <option>Base de Datos</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn btn-success">Asignar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="card shadow-lg p-4">
+        <h5 class="mb-3">Asignaciones Realizadas</h5>
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Profesor</th>
+                    <th>Materia</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ana López</td>
+                    <td>Matemática I</td>
+                    <td><button class="btn btn-sm btn-danger">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Carlos Méndez</td>
+                    <td>Programación I</td>
+                    <td><button class="btn btn-sm btn-danger">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\appsettings.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.staticwebassets.runtime.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.staticwebassets.endpoints.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.exe
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.deps.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.runtimeconfig.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.dll
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.pdb
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.AssemblyInfoInputs.cache
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.AssemblyInfo.cs
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.csproj.CoreCompileInputs.cache
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.RazorAssemblyInfo.cache
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.RazorAssemblyInfo.cs
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\scopedcss\bundle\SistemaEducativoADB.Frontend.Razor.styles.css
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\scopedcss\projectbundle\SistemaEducativoADB.Frontend.Razor.bundle.scp.css
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.dll
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\refint\SistemaEducativoADB.Frontend.Razor.dll
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.pdb
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.genruntimeconfig.cache
+C:\Users\Pablo Muniz\Documents\Pablo\Documents\Cuc\Cursos\Admin.DB\SistemaEducativoADB\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\ref\SistemaEducativoADB.Frontend.Razor.dll
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\appsettings.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.staticwebassets.endpoints.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.staticwebassets.runtime.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.exe
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.deps.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.runtimeconfig.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.dll
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\bin\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.pdb
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.AssemblyInfoInputs.cache
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.AssemblyInfo.cs
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.csproj.CoreCompileInputs.cache
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.RazorAssemblyInfo.cache
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.RazorAssemblyInfo.cs
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.sourcelink.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\scopedcss\bundle\SistemaEducativoADB.Frontend.Razor.styles.css
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\scopedcss\projectbundle\SistemaEducativoADB.Frontend.Razor.bundle.scp.css
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.dll
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\refint\SistemaEducativoADB.Frontend.Razor.dll
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.pdb
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\SistemaEducativoADB.Frontend.Razor.genruntimeconfig.cache
+C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\obj\Debug\net8.0\ref\SistemaEducativoADB.Frontend.Razor.dll

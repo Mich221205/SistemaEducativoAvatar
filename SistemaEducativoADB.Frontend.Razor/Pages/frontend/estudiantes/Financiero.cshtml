@@ -1,0 +1,33 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.estudiantes.FinancieroModel
+@{
+    Layout = "_LayoutEstudiante";
+    ViewData["Title"] = "Financiero";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Módulo Financiero</h2>
+
+    <div class="card shadow-lg p-4">
+        <h5>Datos del Estudiante</h5>
+        <p><strong>Carnet:</strong> 2025001</p>
+        <p><strong>Nombre:</strong> Juan Pérez</p>
+
+        <hr />
+        <h5>Total a Pagar: ₡180,000</h5>
+
+        <div class="mb-3">
+            <label class="form-label">Método de Pago</label>
+            <select class="form-select">
+                <option>Tarjeta de Crédito</option>
+                <option>Tarjeta de Débito</option>
+                <option>Transferencia Bancaria</option>
+            </select>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a class="btn btn-secondary" href="/Frontend/estudiantes/ConfirmacionMatricula">Anterior</a>
+            <button type="submit" class="btn btn-success">Realizar Pago</button>
+        </div>
+    </div>
+</div>

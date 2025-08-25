@@ -1,0 +1,34 @@
+﻿@page
+@model SistemaEducativoADB.Frontend.Razor.Pages.Carreras.IndexModel
+@{
+    ViewData["Title"] = "Carreras";
+}
+
+<h2>Carreras</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Carreras != null && Model.Carreras.Any())
+        {
+            foreach (var carrera in Model.Carreras)
+            {
+                <tr>
+                    <td>@carrera.IdCarrera</td>
+                    <td>@carrera.NombreCarrera</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2">No hay datos disponibles</td>
+            </tr>
+        }
+    </tbody>
+</table>

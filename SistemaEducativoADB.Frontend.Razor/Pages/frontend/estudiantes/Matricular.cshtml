@@ -1,0 +1,38 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.estudiantes.MatricularModel
+@{
+    Layout = "_LayoutEstudiante";
+    ViewData["Title"] = "Matrícula - Datos Personales";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Datos Personales</h2>
+
+    <form method="post" class="card shadow-lg p-4">
+        <div class="mb-3">
+            <label class="form-label">Carné</label>
+            <input type="text" class="form-control" value="2025001" readonly />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" value="Juan Pérez" readonly />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correo</label>
+            <input type="email" class="form-control" value="juanperez@cuc.ac.cr" readonly />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Teléfono Celular</label>
+            <input type="text" class="form-control" value="8888-8888" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Dirección</label>
+            <textarea class="form-control">Cartago, Centro</textarea>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <a class="btn btn-success" href="/Frontend/estudiantes/ParametrosMatricula">Siguiente</a>
+        </div>
+    </form>
+</div>

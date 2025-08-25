@@ -1,0 +1,47 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.estudiantes.SeleccionCursosModel
+@{
+    Layout = "_LayoutEstudiante";
+    ViewData["Title"] = "Matrícula - Selección de Cursos";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Selección de Cursos</h2>
+
+    <table class="table table-hover shadow-lg">
+        <thead class="table-dark">
+            <tr>
+                <th>Código</th>
+                <th>Materia</th>
+                <th>Requisito</th>
+                <th>Grupo</th>
+                <th>Horario</th>
+                <th>Seleccionar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>INF101</td>
+                <td>Programación I</td>
+                <td>Ninguno</td>
+                <td>01</td>
+                <td>Lunes y Miércoles 8:00 - 10:00</td>
+                <td><input type="checkbox" /></td>
+            </tr>
+            <tr>
+                <td>INF202</td>
+                <td>Bases de Datos</td>
+                <td>Programación I</td>
+                <td>02</td>
+                <td>Martes y Jueves 10:00 - 12:00</td>
+                <td><input type="checkbox" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="text-end">
+        <a class="btn btn-secondary" href="/Frontend/estudiantes/ParametrosMatricula">Anterior</a>
+        <a class="btn btn-success" href="/Frontend/estudiantes/ConfirmacionMatricula">Continuar</a>
+
+    </div>
+</div>

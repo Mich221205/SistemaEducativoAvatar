@@ -1,0 +1,51 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.profesor.EstadoAcademicoModel
+@{
+    Layout = "_LayoutProfesor";
+    ViewData["Title"] = "Estado Académico de Grupos";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Estado Académico de Grupos</h2>
+
+    <div class="card shadow-lg p-4">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Carné</th>
+                    <th>Nombre</th>
+                    <th>Materia</th>
+                    <th>Grupo</th>
+                    <th>Nota</th>
+                    <th>Condición</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025001</td>
+                    <td>Ana López</td>
+                    <td>Programación I</td>
+                    <td>G-101</td>
+                    <td>85</td>
+                    <td><span class="badge bg-success">Aprobado</span></td>
+                </tr>
+                <tr>
+                    <td>2025002</td>
+                    <td>Carlos Méndez</td>
+                    <td>Programación I</td>
+                    <td>G-101</td>
+                    <td>55</td>
+                    <td><span class="badge bg-danger">Reprobado</span></td>
+                </tr>
+                <tr>
+                    <td>2025003</td>
+                    <td>Laura Jiménez</td>
+                    <td>Programación I</td>
+                    <td>G-101</td>
+                    <td>0</td>
+                    <td><span class="badge bg-warning text-dark">Cursando</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

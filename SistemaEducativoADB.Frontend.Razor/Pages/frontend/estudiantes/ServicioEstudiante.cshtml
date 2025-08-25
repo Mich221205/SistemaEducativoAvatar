@@ -1,0 +1,96 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.estudiantes.ServicioEstudianteModel
+@{
+    Layout = "_LayoutEstudiante";
+    ViewData["Title"] = "Servicio al Estudiante";
+}
+
+<div class="container mt-4">
+
+    <!-- Paso 1 -->
+    <div class="card shadow-lg mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5>Paso 1: Información del Estudiante</h5>
+        </div>
+        <div class="card-body">
+            <form method="get">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Estudiante:</strong> 2025001 - Juan Pérez</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><strong>Año</strong></label>
+                            <select class="form-select" name="anio">
+                                <option value="">-- Seleccione --</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><strong>Periodo</strong></label>
+                            <select class="form-select" name="periodo">
+                                <option value="">-- Seleccione --</option>
+                                <option value="I">I Cuatrimestre</option>
+                                <option value="II">II Cuatrimestre</option>
+                                <option value="III">III Cuatrimestre</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><strong>Carrera</strong></label>
+                            <select class="form-select" name="carrera">
+                                <option value="">-- Seleccione --</option>
+                                <option value="sistemas">Ingeniería en Sistemas</option>
+                                <option value="admin">Administración de Empresas</option>
+                                <option value="diseno">Diseño Gráfico</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h5>Paso 2: Seleccione una Opción</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+
+                <!-- Consultas -->
+                <div class="col-md-6">
+                    <h6 class="mb-3">Consultas</h6>
+                    <div class="list-group">
+                        <a href="/Frontend/estudiantes/RecordAcademico" class="list-group-item list-group-item-action">
+                            📂 Récord Académico
+                        </a>
+                        <a href="/Frontend/estudiantes/BoletasMatricula" class="list-group-item list-group-item-action">
+                            🧾 Boletas de Matrícula
+                        </a>
+                        <a href="/Frontend/estudiantes/OfertaAcademica" class="list-group-item list-group-item-action">
+                            📚 Oferta Académica
+                        </a>
+                        <a href="/Frontend/estudiantes/Ausencias" class="list-group-item list-group-item-action">
+                            ❌ Ausencias
+                        </a>
+                        <a href="/Frontend/estudiantes/NotasPeriodo" class="list-group-item list-group-item-action">
+                            📝 Notas por Periodo
+                        </a>
+                        <a href="/Frontend/estudiantes/ActualizarDatos" class="list-group-item list-group-item-action">
+                            🔧 Actualizar Datos Personales
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

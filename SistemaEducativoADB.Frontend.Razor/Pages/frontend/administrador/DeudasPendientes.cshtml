@@ -1,0 +1,43 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.administrador.DeudasPendientesModel
+@{
+    Layout = "_LayoutAdministrador";
+    ViewData["Title"] = "Deudas Pendientes";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Deudas Pendientes</h2>
+
+    <div class="card shadow-lg p-4">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Carné</th>
+                    <th>Estudiante</th>
+                    <th>Monto Deuda</th>
+                    <th>Periodo</th>
+                    <th>Año</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025003</td>
+                    <td>María López</td>
+                    <td>₡80,000</td>
+                    <td>I</td>
+                    <td>2025</td>
+                    <td><span class="badge bg-danger">Pendiente</span></td>
+                </tr>
+                <tr>
+                    <td>2025004</td>
+                    <td>Pedro Ramírez</td>
+                    <td>$150</td>
+                    <td>I</td>
+                    <td>2025</td>
+                    <td><span class="badge bg-danger">Pendiente</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

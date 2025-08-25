@@ -1,0 +1,52 @@
+﻿@page
+@model SistemaEducativo.Frontend.Pages.frontend.profesor.ActualizarDatosModel
+@{
+    Layout = "_LayoutProfesor";
+    ViewData["Title"] = "Actualizar Datos Personales";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Actualizar Datos Personales</h2>
+
+    <form method="post" class="card shadow-lg p-4">
+        <!-- Carné (no editable) -->
+        <div class="mb-3">
+            <label class="form-label"><strong>Carné</strong></label>
+            <input type="text" class="form-control" value="PRF001" readonly />
+        </div>
+
+        <!-- Nombre (no editable) -->
+        <div class="mb-3">
+            <label class="form-label"><strong>Nombre</strong></label>
+            <input type="text" class="form-control" value="Profesor Juan Pérez" readonly />
+        </div>
+
+        <!-- Correo institucional (no editable) -->
+        <div class="mb-3">
+            <label class="form-label"><strong>Correo Institucional</strong></label>
+            <input type="email" class="form-control" value="juanperez@cuc.ac.cr" readonly />
+        </div>
+
+        <!-- Teléfono personal -->
+        <div class="mb-3">
+            <label class="form-label"><strong>Teléfono Personal</strong></label>
+            <input type="text" class="form-control" name="telefono" value="8888-8888" />
+        </div>
+
+        <!-- Dirección -->
+        <div class="mb-3">
+            <label class="form-label"><strong>Dirección Domiciliaria</strong></label>
+            <textarea class="form-control" name="direccion">Cartago, Centro</textarea>
+        </div>
+
+        <!-- Correo personal -->
+        <div class="mb-3">
+            <label class="form-label"><strong>Correo Personal</strong></label>
+            <input type="email" class="form-control" name="correoPersonal" placeholder="ejemplo@gmail.com" />
+        </div>
+
+        <div class="text-end">
+            <button type="submit" class="btn btn-success">Actualizar</button>
+        </div>
+    </form>
+</div>

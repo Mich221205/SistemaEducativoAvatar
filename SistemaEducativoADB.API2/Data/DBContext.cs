@@ -207,15 +207,15 @@ namespace SistemaEducativoADB.API2.Data
                 entity.Property(d => d.Nota).HasColumnName("nota");
                 entity.Property(d => d.Condicion).HasColumnName("condicion").HasMaxLength(50);
 
-                entity.HasOne(d => d.Matricula)
-                      .WithMany()
-                      .HasForeignKey(d => d.IdMatricula)
-                      .OnDelete(DeleteBehavior.Restrict);
+                //entity.HasOne(d => d.m)
+                //      .WithMany()
+                //      .HasForeignKey(d => d.IdMatricula)
+                //      .OnDelete(DeleteBehavior.Restrict);
 
-                entity.HasOne(d => d.Grupo)
-                      .WithMany()
-                      .HasForeignKey(d => d.IdGrupo)
-                      .OnDelete(DeleteBehavior.Restrict);
+                //entity.HasOne(d => d.Grupo)
+                //      .WithMany()
+                //      .HasForeignKey(d => d.IdGrupo)
+                //      .OnDelete(DeleteBehavior.Restrict);
             });
             //bitacora
             modelBuilder.Entity<Bitacora>(entity =>
@@ -245,10 +245,10 @@ namespace SistemaEducativoADB.API2.Data
                 entity.Property(a => a.eAsistencia).HasColumnName("e_asistencia");
                 entity.Property(a => a.Fecha).HasColumnName("fecha");
 
-                entity.HasOne(a => a.Grupo)
-                      .WithMany()
-                      .HasForeignKey(a => a.IdGrupo)
-                      .OnDelete(DeleteBehavior.Restrict);
+                //entity.HasOne(a => a.Grupo)
+                //      .WithMany()
+                //      .HasForeignKey(a => a.IdGrupo)
+                //      .OnDelete(DeleteBehavior.Restrict);
 
                 entity.HasOne(a => a.Profesor)
                       .WithMany()

@@ -20,7 +20,7 @@ namespace SistemaEducativoADB.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var asistencias = await _service.GetAllAsistencias();
+            var asistencias = await _service.GetAllAsistencia();
             return Ok(asistencias);
         }
 

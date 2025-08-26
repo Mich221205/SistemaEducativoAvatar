@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SistemaEducativo.Frontend.Services; // <- tu capa de servicios
-using SistemaEducativo.Frontend.Models;   // <- tus DTOs o ViewModels
+using SistemaEducativo.Frontend.Services; 
+using SistemaEducativo.Frontend.Models;   
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using SistemaEducativoADB.Frontend.Razor.Models;
+using SistemaEducativoADB.Frontend.Razor.Services;
+
 
 namespace SistemaEducativo.Frontend.Pages.frontend.administrador
 {

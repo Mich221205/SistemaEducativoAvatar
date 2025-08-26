@@ -1783,6 +1783,48 @@
   },
   {
     "ContainingType": "SistemaEducativoADB.Controllers.UsuarioController",
+    "Method": "ActualizarDatosProfesor",
+    "RelativePath": "api/Usuario/actualizar-profesor/{idUsuario}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SistemaEducativoADB.API2.Models.DTOs.ActualizarProfesorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaEducativoADB.Controllers.UsuarioController",
+    "Method": "ActualizarDatos",
+    "RelativePath": "api/Usuario/actualizar/{idUsuario}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SistemaEducativoADB.API2.Models.DTOs.ActualizarProfesorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaEducativoADB.Controllers.UsuarioController",
     "Method": "CambiarEstado",
     "RelativePath": "api/Usuario/cambiar-estado/{id}",
     "HttpMethod": "PUT",
@@ -1817,6 +1859,22 @@
       },
       {
         "Name": "nuevoRol",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaEducativoADB.Controllers.UsuarioController",
+    "Method": "GetDatosProfesor",
+    "RelativePath": "api/Usuario/datos-profesor/{idUsuario}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
         "Type": "System.Int32",
         "IsRequired": true
       }

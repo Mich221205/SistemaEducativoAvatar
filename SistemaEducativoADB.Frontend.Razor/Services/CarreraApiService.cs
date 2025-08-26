@@ -9,7 +9,7 @@ public class CarreraApiService
         _httpClient = httpClientFactory.CreateClient("ApiClient");
     }
 
-    public async Task<List<Carrera>> GetAllCarrerasAsync()
+    public async Task<List< Carrera>> GetAllCarrerasAsync()
     {
         var response = await _httpClient.GetAsync("Carreras");
         response.EnsureSuccessStatusCode();

@@ -1,4 +1,5 @@
-﻿using SistemaEducativoADB.API2.Models.Entities;
+﻿using SistemaEducativoADB.API2.Models.DTOs;
+using SistemaEducativoADB.API2.Models.Entities;
 using SistemaEducativoADB.API2.Repositories.Interfaces;
 using SistemaEducativoADB.API2.Services.Interfaces;
 
@@ -12,6 +13,12 @@ namespace SistemaEducativoADB.API2.Services
         {
             _repository = repository;
         }
+
+        public async Task ActualizarDatosProfesorAsync(int idUsuario, ActualizarProfesorDto dto)
+        {
+            await _repository.ActualizarDatosProfesorAsync(idUsuario, dto);
+        }
+
 
         public async Task<List<Usuario>> GetAllUsuarios()
         {

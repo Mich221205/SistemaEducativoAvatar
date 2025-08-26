@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using SistemaEducativoADB.Frontend.Razor.Services;
+
 
 namespace SistemaEducativoADB.Frontend.Razor
 {
@@ -17,6 +19,10 @@ namespace SistemaEducativoADB.Frontend.Razor
             // Services propios
             builder.Services.AddScoped<CarreraApiService>();
             builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+            builder.Services.AddScoped<GrupoApiService>();
+            builder.Services.AddScoped<EstudianteApiService>();
+            builder.Services.AddScoped<ProfesorApiService>();
+            builder.Services.AddScoped<AsistenciaApiService>();
 
             // Autenticación con cookies (si luego lo quieres combinar con roles)
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -60,7 +66,7 @@ namespace SistemaEducativoADB.Frontend.Razor
 
             app.UseRouting();
 
-            // 🚀 IMPORTANTE: habilitar sesiones aquí, antes de Auth
+            //  IMPORTANTE: habilitar sesiones aquí, antes de Auth
             app.UseSession();
 
             app.UseAuthentication();

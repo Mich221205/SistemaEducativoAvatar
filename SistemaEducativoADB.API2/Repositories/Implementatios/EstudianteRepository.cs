@@ -19,8 +19,11 @@ namespace SistemaEducativoADB.API2.Repositories.Implementatios
 
         public async Task<IEnumerable<Estudiante>> GetAllAsync()
         {
-            return await _context.Set<Estudiante>().ToListAsync();
+            return await _context.Set<Estudiante>()
+                .Include(e => e.Usuario)
+                .ToListAsync();
         }
+
 
         public async Task<Estudiante> GetByIdAsync(int id)
         {

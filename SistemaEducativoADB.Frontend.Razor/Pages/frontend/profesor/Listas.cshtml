@@ -15,28 +15,28 @@
                     <th>Carné</th>
                     <th>Nombre</th>
                     <th>Correo</th>
-                    <th>Teléfono</th>
+                    <th>Telefono</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>2025001</td>
-                    <td>Ana López</td>
-                    <td>ana.lopez@cuc.ac.cr</td>
-                    <td>8888-1111</td>
-                </tr>
-                <tr>
-                    <td>2025002</td>
-                    <td>Carlos Méndez</td>
-                    <td>carlos.mendez@cuc.ac.cr</td>
-                    <td>8888-2222</td>
-                </tr>
-                <tr>
-                    <td>2025003</td>
-                    <td>Laura Jiménez</td>
-                    <td>laura.jimenez@cuc.ac.cr</td>
-                    <td>8888-3333</td>
-                </tr>
+                @if (Model.estudiantes != null && Model.estudiantes.Any())
+                {
+                    foreach (var estudiante in Model.estudiantes)
+                    {
+                        <tr>
+                            <td>@estudiante.Carnet</td>
+                            <td>@(estudiante.Usuario.nombre)</td>
+                            <td>@(estudiante.Usuario?.email ?? "Sin email")</td>
+                            <td>@estudiante.Telefono</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="2">No hay datos disponibles</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

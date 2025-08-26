@@ -5,8 +5,19 @@ namespace SistemaEducativo.Frontend.Pages.frontend.profesor
 {
     public class GruposModel : PageModel
     {
-        public void OnGet()
+        private readonly GrupoApiService _apiService;
+
+        public GruposModel(GrupoApiService apiService)
         {
+            _apiService = apiService;
+        }
+
+        public List<SistemaEducativoADB.Frontend.Razor.Models.Grupo> Grupos { get; set; } = new();
+
+
+        public async Task OnGetAsync()
+        {
+            Grupos = await _apiService.GetAllGruposAsync();
         }
     }
 }

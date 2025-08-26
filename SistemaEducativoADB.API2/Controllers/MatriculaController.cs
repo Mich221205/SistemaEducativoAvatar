@@ -1,21 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// API2/Controllers/MatriculasController.cs
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SistemaEducativoADB.API2.Data;
 using SistemaEducativoADB.API2.Models.DTOs;
 using SistemaEducativoADB.API2.Models.Entities;
 using SistemaEducativoADB.API2.Services.Interfaces;
 
 namespace SistemaEducativoADB.API2.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class MatriculasController : ControllerBase
     {
-        private readonly IMatriculaService _service;
+        private readonly IMatriculaService _service;   // para tus GET/CRUD existentes
+        private readonly DBContext _db;                // para GuardarSeleccion
 
-        public MatriculasController(IMatriculaService service)
+        // 👇 ÚNICO CONSTRUCTOR (evita el error de "Multiple constructors…")
+        public MatriculasController(IMatriculaService service, DBContext db)
         {
             _service = service;
+            _db = db;
         }
 
+        // ---------- Endpoints existentes que usan _service ----------
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -63,7 +70,6 @@ namespace SistemaEducativoADB.API2.Controllers
             };
 
             await _service.AddMatricula(matricula);
-
             return CreatedAtAction(nameof(GetById), new { id = matricula.id_matricula }, matricula);
         }
 
@@ -83,5 +89,68 @@ namespace SistemaEducativoADB.API2.Controllers
             await _service.DeleteMatricula(id);
             return NoContent();
         }
+
+        // ---------- NUEVO: Guardar selección de grupos ----------
+        public class SeleccionDto
+        {
+            public List<int> grupos { get; set; } = new();
+        }
+
+        [HttpPost("usuario/{idUsuario:int}/seleccion")]
+        public async Task<IActionResult> GuardarSeleccion(int idUsuario, [FromBody] SeleccionDto body)
+        {
+            if (body == null) return BadRequest("Cuerpo vacío.");
+
+            // 1) Buscar estudiante por usuario
+            var est = await _db.Estudiantes
+                .FirstOrDefaultAsync(e => e.IdUsuario == idUsuario);
+            if (est == null) return NotFound("Estudiante no encontrado.");
+
+            // 2) Tomar período activo (ajusta si usas otro criterio)
+            var periodo = await _db.Periodo_Lectivo
+                .OrderByDescending(p => p.anio)
+                .ThenByDescending(p => p.cuatrimestre)
+                .FirstOrDefaultAsync();
+            if (periodo == null) return BadRequest("No hay período activo.");
+
+            // 3) Obtener o crear matrícula del estudiante en el período
+            var mat = await _db.Matriculas
+                .FirstOrDefaultAsync(m => m.id_estudiante == est.IdEstudiante &&
+                                          m.id_periodo == periodo.id_periodo);
+
+            if (mat == null)
+            {
+                mat = new Matricula
+                {
+                    id_estudiante = est.IdEstudiante,
+                    id_periodo = periodo.id_periodo,
+                    estado = "Pendiente"
+                };
+                _db.Matriculas.Add(mat);
+                await _db.SaveChangesAsync(); // para obtener id_matricula
+            }
+
+            // 4) Limpiar selección previa y registrar la nueva
+            var prev = await _db.Detalle_Matriculas
+                                .Where(x => x.IdMatricula == mat.id_matricula)
+                                .ToListAsync();
+            _db.Detalle_Matriculas.RemoveRange(prev);
+
+            foreach (var idGrupo in body.grupos.Distinct())
+            {
+                _db.Detalle_Matriculas.Add(new Detalle_Matricula
+                {
+                    IdMatricula = mat.id_matricula, // FK real (DETALLE_MATRICULA.id_matricula)
+                    IdGrupo = idGrupo,          // FK real (DETALLE_MATRICULA.id_grupo)
+                    Nota = null,             // usa 0m si tu columna NO acepta NULL
+                    Condicion = ""
+                });
+            }
+
+            await _db.SaveChangesAsync();
+            return NoContent();
+        }
     }
 }
+
+

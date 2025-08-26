@@ -2,10 +2,13 @@
 {
     public class Matricula
     {
-        public int id_matricula { get; set; }     // Clave primaria (IDENTITY)
-        public int id_estudiante { get; set; }    // FK hacia Estudiante
-        public int id_periodo { get; set; }       // FK hacia Periodo académico
-        public string estado { get; set; } = "";  // Estado de la matrícula ("Confirmada", "Pendiente")
+        public int id_matricula { get; set; }
+        public int id_estudiante { get; set; }
+        public int id_periodo { get; set; }
+        public string estado { get; set; } = "";
 
+        // NAV: una matrícula tiene muchos detalles
+        public ICollection<Detalle_Matricula> Detalles { get; set; }
+            = new List<Detalle_Matricula>();
     }
 }

@@ -2,6 +2,8 @@
 using SistemaEducativoADB.API2.Models.DTOs;
 using SistemaEducativoADB.API2.Models.Entities;
 using SistemaEducativoADB.API2.Services.Interfaces;
+using SistemaEducativoADB.API2.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace SistemaEducativoADB.API2.Controllers
 {
@@ -134,6 +136,31 @@ namespace SistemaEducativoADB.API2.Controllers
         {
             await _service.DeletePago(id);
             return NoContent();
+        }
+
+        [HttpGet("historial-usuario/{usuarioId:int}")]
+        public async Task<IActionResult> GetHistorialPorUsuario(int usuarioId, [FromServices] DBContext db)
+        {
+            var query =
+                from p in db.Pagos.AsNoTracking()
+                join e in db.Estudiantes.AsNoTracking()
+                    on p.IdEstudiante equals e.IdEstudiante
+                join u in db.Usuarios.AsNoTracking()
+                    on e.IdUsuario equals u.IdUsuario
+                where u.IdUsuario == usuarioId
+                orderby p.Fecha descending, p.IdPago descending
+                select new PagoHistorialDto
+                {
+                    CodigoPago = "PG" + p.IdPago.ToString("D3"),
+                    Nombre = u.nombre,
+                    Fecha = p.Fecha,
+                    Estado = p.Estado,
+                    MontoTotal = p.Monto,
+                    MetodoPago = p.MetodoPago
+                };
+
+            var data = await query.ToListAsync();
+            return Ok(data);
         }
 
         public class CambiarEstadoDto

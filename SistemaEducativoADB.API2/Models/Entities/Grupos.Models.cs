@@ -10,5 +10,8 @@
         public int CupoMax { get; set; }              // cupo_max
         public Materia? Materia { get; set; }
         public Profesor? Profesor { get; set; }
+
+        public ICollection<Detalle_Matricula> Detalles { get; set; }
+            = new List<Detalle_Matricula>();
     }
 }

@@ -212,23 +212,30 @@ namespace SistemaEducativoADB.API2.Data
             //detalle matricula
             modelBuilder.Entity<Detalle_Matricula>(entity =>
             {
-                entity.ToTable("DETALLE_MATRICULA");
-                entity.HasKey(d => d.IdDetalle);
+            
+            entity.ToTable("DETALLE_MATRICULA");
+
+            entity.HasKey(d => d.IdDetalle);
+
+
                 entity.Property(d => d.IdDetalle).HasColumnName("id_detalle");
                 entity.Property(d => d.IdMatricula).HasColumnName("id_matricula");
                 entity.Property(d => d.IdGrupo).HasColumnName("id_grupo");
                 entity.Property(d => d.Nota).HasColumnName("nota");
                 entity.Property(d => d.Condicion).HasColumnName("condicion").HasMaxLength(50);
 
-                entity.HasOne(d => d.Matricula)
-                      .WithMany()
-                      .HasForeignKey(d => d.IdMatricula)
-                      .OnDelete(DeleteBehavior.Restrict);
+// Relación con Matricula
+            entity.HasOne(d => d.Matricula)
+                  .WithMany(m => m.Detalles) // usamos la colección de navegación en Matricula
+                  .HasForeignKey(d => d.IdMatricula)
+                  .OnDelete(DeleteBehavior.Restrict);
 
-                entity.HasOne(d => d.Grupo)
-                      .WithMany()
-                      .HasForeignKey(d => d.IdGrupo)
-                      .OnDelete(DeleteBehavior.Restrict);
+            // Relación con Grupo
+            entity.HasOne(d => d.Grupo)
+                  .WithMany(g => g.Detalles) // usamos la colección de navegación en Grupo
+                  .HasForeignKey(d => d.IdGrupo)
+                  .OnDelete(DeleteBehavior.Restrict);
+
             });
             //bitacora
             modelBuilder.Entity<Bitacora>(entity =>
@@ -406,12 +413,12 @@ namespace SistemaEducativoADB.API2.Data
                 entity.Property(g => g.Aula).HasColumnName("aula").HasMaxLength(50);
                 entity.Property(g => g.CupoMax).HasColumnName("cupo_max");
 
-                entity.HasOne(g => g.Materia)
-                      .WithMany()
-                      .HasForeignKey(g => g.IdMateria)
-                      .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne<Materia>()
+                .WithMany()
+                .HasForeignKey(g => g.IdMateria)
+                .OnDelete(DeleteBehavior.Restrict);
 
-                entity.HasOne(g => g.Profesor)
+                entity.HasOne<Profesor>()
                       .WithMany()
                       .HasForeignKey(g => g.IdProfesor)
                       .OnDelete(DeleteBehavior.Restrict);

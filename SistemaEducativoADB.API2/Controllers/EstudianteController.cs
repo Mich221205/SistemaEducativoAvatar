@@ -3,6 +3,8 @@ using SistemaEducativoADB.API2.Models.DTOs;
 using SistemaEducativoADB.API2.Models.Entities;
 using SistemaEducativoADB.API2.Services;
 using SistemaEducativoADB.API2.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using SistemaEducativoADB.API2.Data;    
 
 namespace SistemaEducativoADB.Controllers
 {
@@ -10,6 +12,8 @@ namespace SistemaEducativoADB.Controllers
     [ApiController]
     public class EstudiantesController : ControllerBase
     {
+        private readonly DBContext _db;
+        public EstudiantesController(DBContext db) => _db = db;
         private readonly IEstudianteService _service;
 
         public EstudiantesController(IEstudianteService service)
@@ -64,6 +68,29 @@ namespace SistemaEducativoADB.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _service.DeleteEstudiante(id);
+            return NoContent();
+        }
+
+        public class CambiarCarreraDto { public int idCarrera { get; set; } }
+
+        // PUT /api/estudiantes/usuario/123/carrera
+        [HttpPut("usuario/{idUsuario:int}/carrera")]
+        public async Task<IActionResult> CambiarCarreraPorUsuario(int idUsuario, [FromBody] CambiarCarreraDto dto)
+        {
+            if (dto == null || dto.idCarrera <= 0)
+                return BadRequest("Debe indicar 'idCarrera'.");
+
+            // Buscamos al estudiante por su usuario
+            var est = await _db.Estudiantes.FirstOrDefaultAsync(e => e.IdUsuario == idUsuario);
+            if (est == null) return NotFound("Estudiante no encontrado.");
+
+            // validar que la carrera exista
+            var existeCarrera = await _db.Carreras.AnyAsync(c => c.IdCarrera == dto.idCarrera);
+            if (!existeCarrera) return NotFound("La carrera indicada no existe.");
+
+            est.IdCarrera = dto.idCarrera;
+            await _db.SaveChangesAsync();
+
             return NoContent();
         }
     }

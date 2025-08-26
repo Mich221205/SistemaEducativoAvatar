@@ -9,39 +9,175 @@
     <h2 class="text-center mb-4">Registrar Asistencia</h2>
 
     <div class="card shadow-lg p-4">
-        <form method="post">
-            <table class="table table-striped table-hover">
+        <form id="asistenciaForm">
+            <table class="table table-striped table-hover" id="estudiantesTable">
                 <thead class="table-dark">
                     <tr>
-                        <th>Carné</th>
+                        <th>Carnét</th>
                         <th>Nombre</th>
                         <th>Asistencia</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>2025001</td>
-                        <td>Ana López</td>
-                        <td>
-                            <select class="form-select">
-                                <option>Presente</option>
-                                <option>Ausente</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2025002</td>
-                        <td>Carlos Méndez</td>
-                        <td>
-                            <select class="form-select">
-                                <option>Presente</option>
-                                <option>Ausente</option>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
+                    <tbody>
+                    @foreach (var est in Model.estudiantes)
+                    {
+                        <tr>
+                            <td>@est.Carnet</td>
+                            <td>@est.Usuario.nombre</td>
+                            <td>
+                                <select class="form-select asistencia-select"
+                                        data-asistencia-id="@est.Asistencia.IdAsistencia"
+                                        data-idgrupo="@est.Asistencia.IdGrupo"
+                                        data-idprofesor="@est.Asistencia.IdProfesor"
+                                        data-idestudiante="@est.Asistencia.IdEstudiante">
+                                    <option value="true" selected="@(est.Asistencia?.asistencia == true ? "selected" : null)">Presente</option>
+                                    <option value="false" selected="@(est.Asistencia?.asistencia == false ? "selected" : null)">Ausente</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
             </table>
-            <button type="submit" class="btn btn-success">Guardar Asistencia</button>
+            <button id="guardarCambios" class="btn btn-primary">Guardar Cambios</button>
+
         </form>
     </div>
 </div>
+
+<script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const btnGuardar = document.getElementById("guardarCambios");
+
+        if (!btnGuardar) {
+            console.error("Botón #guardarCambios no encontrado en el DOM.");
+            return;
+        }
+
+        btnGuardar.addEventListener("click", async (e) => {
+            e.preventDefault();
+
+            console.log("Botón Guardar presionado");
+
+            const selects = document.querySelectorAll(".asistencia-select");
+
+            if (selects.length === 0) {
+                console.warn("No hay elementos con la clase .asistencia-select");
+                return;
+            }
+
+            const updates = [];
+            const creates = [];
+
+            selects.forEach(sel => {
+                const idAsistencia = parseInt(sel.getAttribute("data-asistencia-id"));
+                const idGrupo = parseInt(sel.getAttribute("data-idgrupo"));
+                const idProfesor = parseInt(sel.getAttribute("data-idprofesor"));
+                const idEstudiante = parseInt(sel.getAttribute("data-idestudiante"));
+                const estado = sel.value === "true";
+
+                // Debug: Log para verificar los valores
+                console.log("Datos extraídos:", {
+                    idAsistencia, idGrupo, idProfesor, idEstudiante, estado
+                });
+
+                const asistenciaData = {
+                    idAsistencia: idAsistencia,
+                    idGrupo: idGrupo,
+                    idProfesor: idProfesor,
+                    idEstudiante: idEstudiante,
+                    asistencia: estado,
+                    fecha: new Date().toISOString()
+                };
+
+                // Si IdAsistencia es 0, es una nueva asistencia
+                if (idAsistencia === 0) {
+                    creates.push(asistenciaData);
+                } else {
+                    updates.push(asistenciaData);
+                }
+            });
+
+            // Debug: Log para verificar qué va a cada array
+            console.log("Updates a procesar:", updates.length);
+            console.log("Creates a procesar:", creates.length);
+            console.log("Updates:", updates);
+            console.log("Creates:", creates);
+
+            let hasErrors = false;
+
+            // Procesar actualizaciones (PUT)
+            for (const asistencia of updates) {
+                try {
+                    console.log(`Enviando PUT para asistencia ID ${asistencia.idAsistencia}`);
+                    console.log("Datos enviados:", JSON.stringify(asistencia, null, 2));
+
+                    const response = await fetch(`https://localhost:7076/api/Asistencia/${asistencia.idAsistencia}`, {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(asistencia)
+                    });
+
+                    console.log(`Respuesta PUT ID ${asistencia.idAsistencia}:`, response.status, response.statusText);
+
+                    if (!response.ok) {
+                        console.error(`Error al actualizar asistencia ID ${asistencia.idAsistencia}:`, response.status);
+                        const errorText = await response.text();
+                        console.error("Detalles del error:", errorText);
+                        hasErrors = true;
+                    } else {
+                        console.log(`Asistencia ID ${asistencia.idAsistencia} actualizada correctamente.`);
+                    }
+                } catch (error) {
+                    console.error(`Error en la solicitud para ID ${asistencia.idAsistencia}:`, error);
+                    hasErrors = true;
+                }
+            }
+
+            // Procesar nuevas asistencias (POST)
+            for (const asistencia of creates) {
+                try {
+                    console.log(`Enviando POST para estudiante ${asistencia.idEstudiante}`);
+                    console.log("Datos enviados:", JSON.stringify(asistencia, null, 2));
+
+                    const response = await fetch(`https://localhost:7076/api/Asistencia`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(asistencia)
+                    });
+
+                    console.log(`Respuesta POST estudiante ${asistencia.idEstudiante}:`, response.status, response.statusText);
+
+                    if (!response.ok) {
+                        console.error(`Error al crear asistencia para estudiante ${asistencia.idEstudiante}:`, response.status);
+                        const errorText = await response.text();
+                        console.error("Detalles del error:", errorText);
+                        hasErrors = true;
+                    } else {
+                        console.log(`Nueva asistencia creada para estudiante ${asistencia.idEstudiante}.`);
+
+                        // Si el API no retorna el ID, podemos manejarlo de otra forma
+                        // Por ejemplo, marcar que ya no es nueva asistencia
+                        const select = document.querySelector(`[data-idestudiante="${asistencia.idEstudiante}"]`);
+                        if (select) {
+                            select.setAttribute("data-asistencia-id", "1"); // Temporal, indica que ya existe
+                        }
+                    }
+                } catch (error) {
+                    console.error(`Error al crear asistencia para estudiante ${asistencia.idEstudiante}:`, error);
+                    hasErrors = true;
+                }
+            }
+
+            if (hasErrors) {
+                alert("Hubo algunos errores al guardar los cambios. Revisa la consola para más detalles.");
+            } else {
+                alert("Cambios guardados correctamente");
+            }
+        });
+    });
+
+</script>
+
+

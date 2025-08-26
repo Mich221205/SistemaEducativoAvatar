@@ -212,7 +212,7 @@ namespace SistemaEducativoADB.API2.Data
             //detalle matricula
             modelBuilder.Entity<Detalle_Matricula>(entity =>
             {
-                entity.ToTable("DETALLES_MATRICULA");
+                entity.ToTable("DETALLE_MATRICULA");
                 entity.HasKey(d => d.IdDetalle);
                 entity.Property(d => d.IdDetalle).HasColumnName("id_detalle");
                 entity.Property(d => d.IdMatricula).HasColumnName("id_matricula");
@@ -220,15 +220,15 @@ namespace SistemaEducativoADB.API2.Data
                 entity.Property(d => d.Nota).HasColumnName("nota");
                 entity.Property(d => d.Condicion).HasColumnName("condicion").HasMaxLength(50);
 
-                //entity.HasOne(d => d.m)
-                //      .WithMany()
-                //      .HasForeignKey(d => d.IdMatricula)
-                //      .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(d => d.Matricula)
+                      .WithMany()
+                      .HasForeignKey(d => d.IdMatricula)
+                      .OnDelete(DeleteBehavior.Restrict);
 
-                //entity.HasOne(d => d.Grupo)
-                //      .WithMany()
-                //      .HasForeignKey(d => d.IdGrupo)
-                //      .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(d => d.Grupo)
+                      .WithMany()
+                      .HasForeignKey(d => d.IdGrupo)
+                      .OnDelete(DeleteBehavior.Restrict);
             });
             //bitacora
             modelBuilder.Entity<Bitacora>(entity =>
@@ -249,29 +249,28 @@ namespace SistemaEducativoADB.API2.Data
             //asistencia
             modelBuilder.Entity<Asistencia>(entity =>
             {
-                entity.ToTable("ASISTENCIAS");
+                entity.ToTable("ASISTENCIA");
+
                 entity.HasKey(a => a.IdAsistencia);
-                entity.Property(a => a.IdAsistencia).HasColumnName("id_asistencia");
+
+                entity.Property(a => a.IdAsistencia).HasColumnName("id_Asistencia");
                 entity.Property(a => a.IdGrupo).HasColumnName("id_grupo");
                 entity.Property(a => a.IdProfesor).HasColumnName("id_profesor");
                 entity.Property(a => a.IdEstudiante).HasColumnName("id_estudiante");
-                entity.Property(a => a.eAsistencia).HasColumnName("e_asistencia");
-                entity.Property(a => a.Fecha).HasColumnName("fecha");
+                entity.Property(a => a.asistencia).HasColumnName("Asistencia");
+                entity.Property(a => a.Fecha).HasColumnName("Fecha");
 
-                //entity.HasOne(a => a.Grupo)
-                //      .WithMany()
-                //      .HasForeignKey(a => a.IdGrupo)
-                //      .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(a => a.Grupo)
+                      .WithMany()
+                      .HasForeignKey(a => a.IdGrupo);
 
                 entity.HasOne(a => a.Profesor)
                       .WithMany()
-                      .HasForeignKey(a => a.IdProfesor)
-                      .OnDelete(DeleteBehavior.Restrict);
+                      .HasForeignKey(a => a.IdProfesor);
 
                 entity.HasOne(a => a.Estudiante)
                       .WithMany()
-                      .HasForeignKey(a => a.IdEstudiante)
-                      .OnDelete(DeleteBehavior.Restrict);
+                      .HasForeignKey(a => a.IdEstudiante);
             });
             //cita matricula
             modelBuilder.Entity<Cita_Matricula>(entity =>

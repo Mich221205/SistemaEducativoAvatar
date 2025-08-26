@@ -7,7 +7,7 @@ public class Asistencia
     public int IdGrupo { get; set; }
     public int IdProfesor { get; set; }
     public int IdEstudiante { get; set; }
-    public bool eAsistencia { get; set; }  
+    public bool asistencia { get; set; }  
     public DateTime Fecha { get; set; } = DateTime.Now;
 
     

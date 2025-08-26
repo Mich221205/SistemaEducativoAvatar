@@ -65,5 +65,14 @@ namespace SistemaEducativoADB.Controllers
             await _service.DeleteDetalle_Matricula(id);
             return NoContent();
         }
+
+        [HttpGet("por-matricula/{idMatricula:int}")]
+        public async Task<IActionResult> GetByMatricula(int idMatricula)
+        {
+            var all = await _service.GetAllDetalle_Matriculas();
+            var list = all.Where(d => d.IdMatricula == idMatricula).ToList();
+            return Ok(list);
+        }
+
     }
 }

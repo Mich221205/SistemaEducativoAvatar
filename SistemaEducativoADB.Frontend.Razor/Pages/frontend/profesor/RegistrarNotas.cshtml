@@ -1,5 +1,6 @@
 ﻿@page
 @model SistemaEducativo.Frontend.Pages.frontend.profesor.RegistrarNotasModel
+@inject IConfiguration Config
 @{
     Layout = "_LayoutProfesor";
     ViewData["Title"] = "Registrar Notas";
@@ -9,37 +10,203 @@
     <h2 class="text-center mb-4">Registrar Notas</h2>
 
     <div class="card shadow-lg p-4">
-        <form method="post">
-            <table class="table table-striped table-hover">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Carné</th>
-                        <th>Nombre</th>
-                        <th>Materia</th>
-                        <th>Grupo</th>
-                        <th>Nota</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2025001</td>
-                        <td>Ana López</td>
-                        <td>Programación I</td>
-                        <td>G-101</td>
-                        <td><input type="number" class="form-control" min="0" max="100" /></td>
-                    </tr>
-                    <tr>
-                        <td>2025002</td>
-                        <td>Carlos Méndez</td>
-                        <td>Programación I</td>
-                        <td>G-101</td>
-                        <td><input type="number" class="form-control" min="0" max="100" /></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="text-end">
-                <button type="submit" class="btn btn-success">Guardar Notas</button>
+        <!-- Controles -->
+        <div class="row g-3 mb-3">
+            <div class="col-md-8">
+                <label class="form-label" for="selGrupo">Seleccione el grupo</label>
+                <select id="selGrupo" class="form-select">
+                    <option value="">-- Cargar grupos... --</option>
+                </select>
             </div>
-        </form>
+            <div class="col-md-4 d-flex align-items-end">
+                <button class="btn btn-outline-secondary w-100" id="btnRecargar">Recargar</button>
+            </div>
+        </div>
+
+        <!-- Área de mensajes + tabla renderizada -->
+        <div id="notas-root"
+             data-api-base="@Config["ApiBaseUrl"]"
+             data-id-grupo-inicial="@((Model.IdGrupo > 0) ? Model.IdGrupo.ToString() : "")">
+        </div>
     </div>
 </div>
+
+<script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const root = document.getElementById('notas-root');
+      const base = (root.dataset.apiBase || '').replace(/\/+$/,''); // p.ej. https://localhost:7076
+      const idGrupoInicial = root.dataset.idGrupoInicial || '';
+      const selGrupo = document.getElementById('selGrupo');
+      const btnRecargar = document.getElementById('btnRecargar');
+
+      function msg(text, kind='info'){
+        root.innerHTML = `<div class="alert alert-${kind} mb-3">${text}</div>`;
+      }
+
+      function renderTabla(data){
+        const rows = data.map(x => `
+          <tr data-id-detalle="${x.idDetalle ?? x.IdDetalle}">
+            <td>${x.carne ?? x.Carne ?? ''}</td>
+            <td>${x.nombre ?? x.Nombre ?? ''}</td>
+            <td>${x.materia ?? x.Materia ?? ''}</td>
+            <td>${x.grupo ?? x.Grupo ?? ''}</td>
+            <td>
+              <input type="number" class="form-control nota-input"
+                     min="0" max="100" step="0.01"
+                     value="${x.nota ?? x.Nota ?? ''}" placeholder="0-100">
+            </td>
+          </tr>`).join('');
+
+        root.innerHTML = `
+          <div class="table-responsive">
+            <form id="frmNotas">
+              <table class="table table-striped table-hover align-middle">
+                <thead class="table-dark">
+                  <tr>
+                    <th>Carné</th>
+                    <th>Nombre</th>
+                    <th>Materia</th>
+                    <th>Grupo</th>
+                    <th style="width:160px">Nota</th>
+                  </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+              </table>
+              <div class="text-end">
+                <button type="submit" class="btn btn-success" id="btnGuardar">Guardar Notas</button>
+              </div>
+            </form>
+          </div>`;
+
+        const frm = document.getElementById('frmNotas');
+        frm.addEventListener('submit', async (ev) => {
+          ev.preventDefault();
+          const idGrupo = selGrupo.value;
+          const cambios = [];
+          let invalido = false;
+
+          frm.querySelectorAll('tbody tr').forEach(tr => {
+            const idDetalle = Number(tr.dataset.idDetalle);
+            const inp = tr.querySelector('.nota-input');
+            const val = inp.value.trim();
+            const nota = val === '' ? null : Number(val.replace(',', '.'));
+            if (nota !== null && (isNaN(nota) || nota < 0 || nota > 100)){
+              invalido = true; inp.classList.add('is-invalid');
+            } else {
+              inp.classList.remove('is-invalid');
+              cambios.push({ idDetalle, nota });
+            }
+          });
+
+          if (invalido) { msg('Corrige notas fuera de 0–100.','warning'); return; }
+
+          const btn = document.getElementById('btnGuardar');
+          btn.disabled = true; btn.textContent = 'Guardando…';
+          try{
+            const res = await fetch(`${base}/api/Notas/guardar-por-grupo/${idGrupo}`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(cambios)
+            });
+            if (!res.ok && res.status !== 204){
+              const t = await res.text();
+              msg(`Error al guardar (HTTP ${res.status}): ${t}`,'danger');
+            } else {
+              msg('Notas guardadas correctamente.','success');
+              await cargarNotasDelGrupo(idGrupo);
+            }
+          } catch(e){
+            msg(`Error de red: ${e}`,'danger');
+          } finally {
+            btn.disabled = false; btn.textContent = 'Guardar Notas';
+          }
+        });
+      }
+
+      async function cargarGrupos(){
+        msg('Cargando grupos…','info');
+        try{
+          const url = `${base}/api/Notas/grupos`;
+          console.log('[Grupos] GET', url);
+          const res = await fetch(url);
+          let txt = await res.text();
+          if (!txt || txt.trim()==='') txt = '[]';
+          const list = res.ok ? JSON.parse(txt) : [];
+          if (!Array.isArray(list) || list.length === 0){
+            selGrupo.innerHTML = `<option value="">-- Sin grupos --</option>`;
+            msg('No hay grupos disponibles.','warning');
+            return;
+          }
+          selGrupo.innerHTML = ['<option value="">-- Seleccione un grupo --</option>']
+            .concat(list.map(g => `<option value="${g.idGrupo ?? g.IdGrupo}">${g.display ?? g.Display}</option>`))
+            .join('');
+
+          // Preselección si venía en la URL (?idGrupo=123)
+          if (idGrupoInicial){
+            selGrupo.value = idGrupoInicial;
+            await cargarNotasDelGrupo(idGrupoInicial);
+          } else {
+            msg('Seleccione un grupo para cargar sus estudiantes.','secondary');
+          }
+        }catch(e){
+          msg(`Error al cargar grupos: ${e}`,'danger');
+        }
+      }
+
+      // --- NUEVO: helper con fallback para /por-grupo ---
+      async function fetchJsonFallbackPorGrupo(baseUrl, idGrupo) {
+        // 1) /por-grupo/{id}
+        const url1 = `${baseUrl}/api/Notas/por-grupo/${idGrupo}`;
+        console.log('[PorGrupo] TRY 1:', url1);
+        try {
+          const r1 = await fetch(url1);
+          if (r1.ok) {
+            let t1 = await r1.text(); if (!t1 || t1.trim()==='') t1 = '[]';
+            return { data: JSON.parse(t1), used: url1, status: r1.status };
+          }
+          if (r1.status !== 404) {
+            const t = await r1.text();
+            throw new Error(`HTTP ${r1.status} ${t}`);
+          }
+        } catch (e) {
+          console.warn('[PorGrupo] Falló TRY 1:', e);
+        }
+        // 2) /por-grupo?idGrupo={id}
+        const url2 = `${baseUrl}/api/Notas/por-grupo?idGrupo=${encodeURIComponent(idGrupo)}`;
+        console.log('[PorGrupo] TRY 2:', url2);
+        const r2 = await fetch(url2);
+        if (!r2.ok) {
+          const t = await r2.text();
+          throw new Error(`HTTP ${r2.status} ${t}`);
+        }
+        let t2 = await r2.text(); if (!t2 || t2.trim()==='') t2 = '[]';
+        return { data: JSON.parse(t2), used: url2, status: r2.status };
+      }
+      
+
+      async function cargarNotasDelGrupo(idGrupo){
+        if (!idGrupo){ msg('Seleccione un grupo.','secondary'); return; }
+        msg('Cargando estudiantes…','info');
+        try{
+          const { data, used, status } = await fetchJsonFallbackPorGrupo(base, idGrupo);
+          console.log('[PorGrupo] OK via:', used, 'status:', status, 'rows:', Array.isArray(data) ? data.length : 'N/A');
+
+          if (!Array.isArray(data) || data.length === 0){
+            msg('Este grupo no tiene estudiantes o notas.','warning'); return;
+          }
+          renderTabla(data);
+        }catch(e){
+          console.error('[PorGrupo] Error:', e);
+          msg(`Error al cargar estudiantes: ${e.message}`,'danger');
+        }
+      }
+
+      // Eventos
+      selGrupo.addEventListener('change', e => cargarNotasDelGrupo(e.target.value));
+      btnRecargar.addEventListener('click', e => { e.preventDefault(); cargarGrupos(); });
+
+      // Inicio
+      cargarGrupos();
+    });
+</script>
+

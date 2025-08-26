@@ -2,12 +2,12 @@
 {
     public class NotaCompleta
     {
-        public string Carnet { get; set; }
-        public string Nombre { get; set; }
-        public string Materia { get; set; }
-        public string Grupo { get; set; }
+        public string Materia { get; set; } = "";
+        public string Grupo { get; set; } = "";
         public decimal Nota { get; set; }
-        public string Condicion { get; set; }
-    }
+        public string Condicion { get; set; } = "";
 
+        public Usuario Usuario { get; set; }
+        public Estudiante Estudiante { get; set; }
+    }
 }

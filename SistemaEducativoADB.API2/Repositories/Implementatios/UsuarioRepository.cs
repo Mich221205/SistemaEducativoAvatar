@@ -17,9 +17,11 @@ namespace SistemaEducativoADB.API2.Repositories.Implementations
         public async Task<IEnumerable<Usuario>> GetAllAsync()
         {
             return await _context.Usuarios
-                .Include(u => u.Rol) 
+                .Include(u => u.Rol)
+                .Include(u => u.Estudiante) 
                 .ToListAsync();
         }
+
 
         public async Task<Usuario?> GetByIdAsync(int id)
         {

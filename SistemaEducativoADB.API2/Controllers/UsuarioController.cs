@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SistemaEducativo.Frontend.Models;
 using SistemaEducativoADB.API.Models.DTOs;
 using SistemaEducativoADB.API2.Models.DTOs;
 using SistemaEducativoADB.API2.Models.Entities;
@@ -17,6 +18,27 @@ namespace SistemaEducativoADB.Controllers
         {
             _service = service;
         }
+
+        // GET: api/Usuario/estudiantes/activos
+        [HttpGet("estudiantes/activos")]
+        public async Task<IActionResult> GetEstudiantesActivos()
+        {
+            var usuarios = await _service.GetAllUsuarios();
+
+            var result = usuarios
+                .Where(u => true && u.IdRol == 3) // 👈 solo rol estudiante
+                .Select(u => new EstudianteDto
+                {
+                    Carnet = u.Estudiante != null ? u.Estudiante.Carnet : "",
+                    Nombre = u.nombre,
+                    FechaIngreso = u.FechaCreacion,
+                    Email = u.email,
+                    Estado = u.Estado
+                });
+
+            return Ok(result);
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> GetAll()

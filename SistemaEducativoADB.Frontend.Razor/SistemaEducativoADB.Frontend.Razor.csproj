@@ -6,4 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\Models\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Michel\workspace\SistemaEducativoAvatar\SistemaEducativoADB.Frontend.Razor\Models\.editorconfig" />
+  </ItemGroup>
+
 </Project>

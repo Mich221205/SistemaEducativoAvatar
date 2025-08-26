@@ -10,6 +10,16 @@ public class UsuarioService : IUsuarioService
         _httpClient = httpClientFactory.CreateClient("ApiClient");
     }
 
+    public async Task<List<EstudianteDto>> GetEstudiantesActivosAsync()
+    {
+        var response = await _httpClient.GetAsync("Usuario/estudiantes/activos");
+        response.EnsureSuccessStatusCode();
+
+        var result = await response.Content.ReadFromJsonAsync<List<EstudianteDto>>();
+        return result ?? new List<EstudianteDto>();
+    }
+
+
     public async Task<Usuario?> LoginAsync(string email, string contrasena)
     {
         var dto = new { email = email, contrasena = contrasena };

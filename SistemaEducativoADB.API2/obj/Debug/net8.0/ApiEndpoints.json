@@ -1825,6 +1825,16 @@
   },
   {
     "ContainingType": "SistemaEducativoADB.Controllers.UsuarioController",
+    "Method": "GetEstudiantesActivos",
+    "RelativePath": "api/Usuario/estudiantes/activos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaEducativoADB.Controllers.UsuarioController",
     "Method": "GetInactivos",
     "RelativePath": "api/Usuario/inactivos",
     "HttpMethod": "GET",

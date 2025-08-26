@@ -14,30 +14,33 @@
                 <tr>
                     <th>Carné</th>
                     <th>Nombre</th>
-                    <th>Carrera</th>
-                    <th>Periodo</th>
-                    <th>Año</th>
+                    <th>Fecha Ingreso</th>
+                    <th>Email</th>
                     <th>Estado</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>2025001</td>
-                    <td>Juan Pérez</td>
-                    <td>Informática</td>
-                    <td>I</td>
-                    <td>2025</td>
-                    <td><span class="badge bg-success">Activo</span></td>
-                </tr>
-                <tr>
-                    <td>2025002</td>
-                    <td>Ana Gómez</td>
-                    <td>Contabilidad</td>
-                    <td>I</td>
-                    <td>2025</td>
-                    <td><span class="badge bg-success">Activo</span></td>
-                </tr>
+                @foreach (var est in Model.EstudiantesActivos)
+                {
+                    <tr>
+                        <td>@est.Carnet</td>
+                        <td>@est.Nombre</td>
+                        <td>@est.FechaIngreso.ToString("dd/MM/yyyy")</td>
+                        <td>@est.Email</td>
+                        <td>
+                            @if (est.Estado)
+                            {
+                                <span class="badge bg-success">Activo</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Inactivo</span>
+                            }
+                        </td>
+                    </tr>
+                }
             </tbody>
+
         </table>
     </div>
 </div>

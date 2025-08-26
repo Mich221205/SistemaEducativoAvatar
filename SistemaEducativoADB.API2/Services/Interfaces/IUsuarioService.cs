@@ -1,4 +1,5 @@
-﻿using SistemaEducativoADB.API2.Models.Entities;
+﻿using SistemaEducativoADB.API2.Models.DTOs;
+using SistemaEducativoADB.API2.Models.Entities;
 
 namespace SistemaEducativoADB.API2.Services.Interfaces
 {
@@ -12,6 +13,8 @@ namespace SistemaEducativoADB.API2.Services.Interfaces
         Task CambiarEstadoAsync(int id, bool nuevoEstado);
         Task CambiarRolAsync(int id, int nuevoRol);
         Task<Usuario?> Login(string email, string contrasena); // Para login
+        Task ActualizarDatosProfesorAsync(int idUsuario, ActualizarProfesorDto dto);
+
     }
 }
 

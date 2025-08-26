@@ -9,40 +9,34 @@
     <h2 class="text-center mb-4">Actualizar Datos Personales</h2>
 
     <form method="post" class="card shadow-lg p-4">
-        <!-- Carné (no editable) -->
+        <!-- Cédula -->
         <div class="mb-3">
-            <label class="form-label"><strong>Carné</strong></label>
-            <input type="text" class="form-control" value="PRF001" readonly />
+            <label class="form-label"><strong>Cédula</strong></label>
+            <input type="text" asp-for="DatosProfesor.Cedula" class="form-control" />
         </div>
 
-        <!-- Nombre (no editable) -->
+        <!-- Nombre -->
         <div class="mb-3">
             <label class="form-label"><strong>Nombre</strong></label>
-            <input type="text" class="form-control" value="Profesor Juan Pérez" readonly />
+            <input type="text" asp-for="DatosProfesor.Nombre" class="form-control" />
         </div>
 
-        <!-- Correo institucional (no editable) -->
+        <!-- Correo -->
         <div class="mb-3">
             <label class="form-label"><strong>Correo Institucional</strong></label>
-            <input type="email" class="form-control" value="juanperez@cuc.ac.cr" readonly />
+            <input type="email" asp-for="DatosProfesor.CorreoPersonal" class="form-control" />
         </div>
 
-        <!-- Teléfono personal -->
+        <!-- Teléfono -->
         <div class="mb-3">
-            <label class="form-label"><strong>Teléfono Personal</strong></label>
-            <input type="text" class="form-control" name="telefono" value="8888-8888" />
-        </div>
-
-        <!-- Dirección -->
-        <div class="mb-3">
-            <label class="form-label"><strong>Dirección Domiciliaria</strong></label>
-            <textarea class="form-control" name="direccion">Cartago, Centro</textarea>
+            <label class="form-label"><strong>Teléfono</strong></label>
+            <input type="text" asp-for="DatosProfesor.Telefono" class="form-control" />
         </div>
 
         <!-- Correo personal -->
         <div class="mb-3">
             <label class="form-label"><strong>Correo Personal</strong></label>
-            <input type="email" class="form-control" name="correoPersonal" placeholder="ejemplo@gmail.com" />
+            <input type="email" asp-for="DatosProfesor.CorreoPersonal" class="form-control" />
         </div>
 
         <div class="text-end">

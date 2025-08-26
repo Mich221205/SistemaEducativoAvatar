@@ -44,7 +44,6 @@ namespace SistemaEducativoADB.API2.Services
             return await _repository.LoginAsync(email, contrasena);
         }
 
-        // 🚀 Nuevos métodos
         public async Task CambiarEstadoAsync(int id, bool nuevoEstado)
         {
             await _repository.CambiarEstadoAsync(id, nuevoEstado);

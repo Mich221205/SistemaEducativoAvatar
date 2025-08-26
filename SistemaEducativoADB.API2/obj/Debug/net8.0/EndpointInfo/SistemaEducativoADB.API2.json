@@ -2664,6 +2664,18 @@
         }
       }
     },
+    "/api/Usuario/estudiantes/activos": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Usuario": {
       "get": {
         "tags": [

@@ -1,4 +1,6 @@
 ﻿using SistemaEducativoADB.Frontend.Razor.Models;
+using SistemaEducativo.Frontend.Models;
+
 
 public interface IUsuarioService
 {
@@ -8,5 +10,7 @@ public interface IUsuarioService
     Task<List<Usuario>?> GetInactivosAsync();
     Task<bool> CambiarEstadoAsync(int idUsuario, bool nuevoEstado);
     Task<bool> CambiarRolAsync(int idUsuario, int nuevoRol);
+    Task<List<EstudianteDto>> GetEstudiantesActivosAsync();
+
 }
 

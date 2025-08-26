@@ -13,7 +13,6 @@
             <thead class="table-dark">
                 <tr>
                     <th>Nombre</th>
-                    <th>Tipo de Usuario</th>
                     <th>Correo</th>
                     <th>Estado</th>
                     <th>Rol</th>
@@ -21,40 +20,57 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Ejemplo de registros quemados -->
-                <tr>
-                    <td>Ana López</td>
-                    <td>Estudiante</td>
-                    <td>ana.lopez@cuc.ac.cr</td>
-                    <td><span class="badge bg-danger">Inactiva</span></td>
-                    <td>
-                        <select class="form-select form-select-sm">
-                            <option>Estudiante</option>
-                            <option>Profesor</option>
-                            <option>Administrador</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="btn btn-sm btn-success">Activar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Carlos Méndez</td>
-                    <td>Profesor</td>
-                    <td>carlos.mendez@cuc.ac.cr</td>
-                    <td><span class="badge bg-success">Activa</span></td>
-                    <td>
-                        <select class="form-select form-select-sm">
-                            <option>Estudiante</option>
-                            <option selected>Profesor</option>
-                            <option>Administrador</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="btn btn-sm btn-danger">Desactivar</button>
-                    </td>
-                </tr>
+                @if (Model.Usuarios.Any())
+                {
+                    foreach (var usuario in Model.Usuarios)
+                    {
+                        <tr>
+                            <td>@usuario.nombre</td>
+                            <td>@usuario.email</td>
+                            <td>
+                                @if (usuario.Estado)
+                                {
+                                    <span class="badge bg-success">Activa</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Inactiva</span>
+                                }
+                            </td>
+                            <td>
+                                <form method="post" asp-page-handler="CambiarRol">
+                                    <input type="hidden" name="UsuarioId" value="@usuario.IdUsuario" />
+                                    <select name="NuevoRol" class="form-select form-select-sm">
+                                        <option value="1" selected="@(usuario.id_rol == 1)">Administrador</option>
+                                        <option value="2" selected="@(usuario.id_rol == 2)">Docente</option>
+                                        <option value="3" selected="@(usuario.id_rol == 3)">Estudiante</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-sm btn-primary mt-1">Cambiar Rol</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form method="post" asp-page-handler="CambiarEstado">
+                                    <input type="hidden" name="UsuarioId" value="@usuario.IdUsuario" />
+                                    <input type="hidden" name="NuevoEstado" value="@(!usuario.Estado)" />
+                                    @if (usuario.Estado)
+                                    {
+                                        <button class="btn btn-sm btn-danger">Desactivar</button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-sm btn-success">Activar</button>
+                                    }
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><td colspan="5" class="text-center">No hay usuarios inactivos.</td></tr>
+                }
             </tbody>
+
         </table>
     </div>
 </div>

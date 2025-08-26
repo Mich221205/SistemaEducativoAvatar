@@ -1,8 +1,6 @@
 ﻿using SistemaEducativoADB.API2.Models.Entities;
 using SistemaEducativoADB.API2.Repositories.Interfaces;
 using SistemaEducativoADB.API2.Services.Interfaces;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace SistemaEducativoADB.API2.Services
 {
@@ -15,29 +13,46 @@ namespace SistemaEducativoADB.API2.Services
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Usuario>> GetAllUsuarios()
+        public async Task<List<Usuario>> GetAllUsuarios()
         {
-            return await _repository.GetAllAsync();
+            var usuarios = await _repository.GetAllAsync();
+            return usuarios.ToList();
         }
 
-        public async Task<Usuario> GetUsuarioById(int id)
+        public async Task<Usuario?> GetUsuarioById(int id)
         {
-            return await _repository.GetByIdAsync(id);
+            return await _repository.GetByIdAsync(id); // puede ser null
         }
 
-        public async Task AddUsuario(Usuario Usuario)
+        public async Task AddUsuario(Usuario usuario)
         {
-            await _repository.AddAsync(Usuario);
+            await _repository.AddAsync(usuario);
         }
 
-        public async Task UpdateUsuario(Usuario Usuario)
+        public async Task UpdateUsuario(Usuario usuario)
         {
-            await _repository.UpdateAsync(Usuario);
+            await _repository.UpdateAsync(usuario);
         }
 
         public async Task DeleteUsuario(int id)
         {
             await _repository.DeleteAsync(id);
+        }
+
+        public async Task<Usuario?> Login(string email, string contrasena)
+        {
+            return await _repository.LoginAsync(email, contrasena);
+        }
+
+        // 🚀 Nuevos métodos
+        public async Task CambiarEstadoAsync(int id, bool nuevoEstado)
+        {
+            await _repository.CambiarEstadoAsync(id, nuevoEstado);
+        }
+
+        public async Task CambiarRolAsync(int id, int nuevoRol)
+        {
+            await _repository.CambiarRolAsync(id, nuevoRol);
         }
     }
 }

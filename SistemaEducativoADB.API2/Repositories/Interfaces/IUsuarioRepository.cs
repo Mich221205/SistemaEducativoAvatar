@@ -9,5 +9,8 @@ namespace SistemaEducativoADB.API2.Repositories.Interfaces
         Task AddAsync(Usuario Usuario);
         Task UpdateAsync(Usuario Usuario);
         Task DeleteAsync(int id);
+        Task<Usuario?> LoginAsync(string email, string contrasena);
+        Task CambiarEstadoAsync(int id, bool nuevoEstado);
+        Task CambiarRolAsync(int id, int nuevoRol);
     }
 }

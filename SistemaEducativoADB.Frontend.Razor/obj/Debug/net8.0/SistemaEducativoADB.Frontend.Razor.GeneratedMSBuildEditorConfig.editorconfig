@@ -36,10 +36,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxBc2lnbmFyTWF0ZXJpYXNQcm9mZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/CitaMatricula.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxDaXRhTWF0cmljdWxhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/DeudasPendientes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxEZXVkYXNQZW5kaWVudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,10 +50,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/PagosRealizados.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxQYWdvc1JlYWxpemFkb3MuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/RecuperarContrasenna.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcYWRtaW5pc3RyYWRvclxSZWN1cGVyYXJDb250cmFzZW5uYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/administrador/ReporteMatricula.cshtml]
@@ -170,6 +162,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/profesor/VerNotas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRccHJvZmVzb3JcVmVyTm90YXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/frontend/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZnJvbnRlbmRcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Michel/workspace/SistemaEducativoAvatar/SistemaEducativoADB.Frontend.Razor/Pages/Privacy.cshtml]

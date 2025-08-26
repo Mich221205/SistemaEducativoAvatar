@@ -1,0 +1,12 @@
+# ==== Visual Studio y .NET ====
+
+# Archivos de configuración de usuario de Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Carpetas temporales de Visual Studio
+.vs/
+.vscode/
+

@@ -1,0 +1,82 @@
+﻿@page
+@model SistemaEducativoADB.Frontend.Razor.Pages.frontend.RegisterModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+          integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/normalize.css" />
+    <title>Registrarse</title>
+</head>
+<body>
+    <main class="login-design">
+        <div class="waves">
+            <img src="~/images/loginPerson.png" alt="" />
+        </div>
+        <div class="login">
+            <div class="login-data">
+                <img src="~/images/collab.png" alt="" />
+                <h1>Crear Cuenta</h1>
+
+                <form method="post" class="login-form">
+                    <div class="input-group">
+                        <label class="input-fill">
+                            <input asp-for="Nombre" type="text" required />
+                            <span class="input-label">Nombre</span>
+                            <i class="fas fa-user"></i>
+                        </label>
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-fill">
+                            <input asp-for="Email" type="email" required />
+                            <span class="input-label">Correo Electrónico</span>
+                            <i class="fas fa-envelope"></i>
+                        </label>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-fill">
+                            <input asp-for="Password" type="password" required />
+                            <span class="input-label">Contraseña</span>
+                            <i class="fas fa-lock"></i>
+                        </label>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-fill">
+                            <input asp-for="ConfirmPassword" type="password" required />
+                            <span class="input-label">Confirmar Contraseña</span>
+                            <i class="fas fa-lock"></i>
+                        </label>
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+
+                    <a asp-page="/frontend/login">¿Ya tienes cuenta? Inicia sesión</a>
+                    <input type="submit" value="Registrarse" class="btn-login" />
+                </form>
+
+                @if (!string.IsNullOrEmpty(Model.Mensaje))
+                {
+                    <p style="color:red;">@Model.Mensaje</p>
+                }
+            </div>
+        </div>
+    </main>
+
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>

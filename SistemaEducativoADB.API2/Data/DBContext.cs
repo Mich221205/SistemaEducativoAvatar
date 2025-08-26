@@ -8,6 +8,7 @@ namespace SistemaEducativoADB.API2.Data
         public DBContext(DbContextOptions<DBContext> options) : base(options) { }
 
         // DbSets (Tablas)
+        public DbSet<Rol> Roles { get; set; }
         public DbSet<Estudiante> Estudiantes { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Profesor> Profesores { get; set; }
@@ -22,7 +23,6 @@ namespace SistemaEducativoADB.API2.Data
         public DbSet<Periodo_Lectivo> Periodo_Lectivo { get; set; }
         public DbSet<Plan_Estudio> Plan_Estudio { get; set; }
         public DbSet<Requisito> Requisitos { get; set; }
-        public DbSet<Rol> Roles { get; set; }
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<Matricula> Matriculas { get; set; }
@@ -32,6 +32,23 @@ namespace SistemaEducativoADB.API2.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Configuración de ROLES
+            modelBuilder.Entity<Rol>(entity =>
+            {
+                entity.ToTable("ROLES");
+
+                entity.HasKey(r => r.IdRol);
+
+                entity.Property(r => r.IdRol)
+                      .HasColumnName("id_rol");
+
+                entity.Property(r => r.NombreRol)
+                      .HasColumnName("nombre_rol")
+                      .HasMaxLength(100)
+                      .IsRequired();
+            });
+
+
             // Configuración de ESTUDIANTES
             modelBuilder.Entity<Estudiante>(entity =>
             {
@@ -155,35 +172,24 @@ namespace SistemaEducativoADB.API2.Data
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.ToTable("USUARIOS");
-
                 entity.HasKey(u => u.IdUsuario);
 
-                entity.Property(u => u.IdUsuario)
-                      .HasColumnName("id_usuario");
+                entity.Property(u => u.IdUsuario).HasColumnName("id_usuario");
+                entity.Property(u => u.nombre).HasColumnName("nombre").HasMaxLength(100).IsRequired();
+                entity.Property(u => u.email).HasColumnName("email").HasMaxLength(150).IsRequired();
+                entity.Property(u => u.contrasena).HasColumnName("contrasena").HasMaxLength(200).IsRequired();
+                entity.Property(u => u.Estado).HasColumnName("estado").HasDefaultValue(true);
+                entity.Property(u => u.FechaCreacion).HasColumnName("fecha_creacion").HasDefaultValueSql("GETDATE()");
+                entity.Property(u => u.IdRol).HasColumnName("id_rol");
 
-                entity.Property(u => u.nombre)
-                      .HasColumnName("nombre")
-                      .HasMaxLength(100)
-                      .IsRequired();
-
-                entity.Property(u => u.email)
-                      .HasColumnName("email")
-                      .HasMaxLength(150)
-                      .IsRequired();
-
-                entity.Property(u => u.contrasena)
-                      .HasColumnName("contrasena")
-                      .HasMaxLength(200)
-                      .IsRequired();
-
-                entity.Property(u => u.Estado)
-                      .HasColumnName("estado")
-                      .HasDefaultValue(true);
-
-                entity.Property(u => u.FechaCreacion)
-                      .HasColumnName("fecha_creacion")
-                      .HasDefaultValueSql("GETDATE()");
+                // Relación Usuario - Rol
+                entity.HasOne(u => u.Rol)
+                      .WithMany(r => r.Usuarios)
+                      .HasForeignKey(u => u.IdRol)
+                      .OnDelete(DeleteBehavior.Restrict);
             });
+
+
             //correquisitos
             modelBuilder.Entity<Correquisito>(entity =>
             {
@@ -386,19 +392,6 @@ namespace SistemaEducativoADB.API2.Data
                       .WithMany()
                       .HasForeignKey(r => r.IdRequisito)
                       .OnDelete(DeleteBehavior.Restrict);
-            });
-
-            //ROLES
-            modelBuilder.Entity<Rol>(entity =>
-            {
-                entity.ToTable("ROLES");
-                entity.HasKey(r => r.IdRol);
-                entity.Property(r => r.IdRol)
-                      .HasColumnName("id_rol");
-                entity.Property(r => r.NombreRol)
-                      .HasColumnName("nombre_rol")
-                      .HasMaxLength(100)
-                      .IsRequired();
             });
 
             //GRUPOS

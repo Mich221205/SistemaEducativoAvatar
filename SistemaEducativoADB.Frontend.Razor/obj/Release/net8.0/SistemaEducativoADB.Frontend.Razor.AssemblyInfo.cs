@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaEducativoADB.Frontend.Razor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5215014451fe7378e10b7c86aa051c3b5101797")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9fd4bd61ed70a1292375f97b1649bdabffc2c47")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaEducativoADB.Frontend.Razor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaEducativoADB.Frontend.Razor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

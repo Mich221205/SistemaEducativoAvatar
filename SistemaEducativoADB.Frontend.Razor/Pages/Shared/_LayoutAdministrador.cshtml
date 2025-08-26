@@ -23,16 +23,20 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" asp-page="/Index">
-                <img src="~/images/logo.png" alt="Logo" style="height: 8rem;" />
+                <img src="~/images/logo.png" alt="Logo" style="height: 4rem;" />
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
+
+                    <!-- Gestión de Usuarios -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gestión de Usuarios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="usuariosDropdown">
+                            <li><a class="dropdown-item" asp-page="/Frontend/administrador/ActivarCuentas">Activar cuentas de usuario</a></li>
+                        </ul>
+                    </li>
 
                     <!-- Gestión Académica -->
                     <li class="nav-item dropdown">
@@ -40,44 +44,42 @@
                             Gestión Académica
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="academicaDropdown">
-                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/Grupos">Grupos Asignados</a></li>
-                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/Listas">Lista de Estudiantes</a></li>
-                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/Registrar">Registrar Asistencia</a></li>
-                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/Ausencias">Ver Ausencias</a></li>
+                            <li><a class="dropdown-item" asp-page="/Frontend/administrador/GruposHorarios">Grupos y horarios</a></li>
                         </ul>
                     </li>
 
-                    <!-- Gestión de Notas -->
+                    <!-- Gestión de Profesores -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="notasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Gestión de Notas
+                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="profesoresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gestión de Profesores
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="notasDropdown">
-                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/RegistrarNotas">Registrar Notas</a></li>
-                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/EstadoAcademico">Ver Estado Académico de Grupos</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="profesoresDropdown">
+                            <li><a class="dropdown-item" asp-page="/Frontend/administrador/AsignarMateriasProfes">Asignar materias a profesores</a></li>
                         </ul>
                     </li>
 
-                    <!-- Comunicación y Reportes -->
+                    <!-- Matrícula y Pagos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="matriculaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Matrícula y Pagos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="matriculaDropdown">
+                            <li><a class="dropdown-item" asp-page="/Frontend/administrador/ReporteMatricula">Ver reporte de matrícula</a></li>
+                            <li><a class="dropdown-item" asp-page="/Frontend/administrador/PagosRealizados">Ver pagos realizados</a></li>
+                            <li><a class="dropdown-item" asp-page="/Frontend/administrador/DeudasPendientes">Ver deudas pendientes</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Reportes y Bitácoras -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Comunicación y Reportes
+                            Reportes y Bitácoras
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/VerNotas">Ver Notas</a></li>
+                            <li><a class="dropdown-item" asp-page="/Frontend/administrador/ReportesEstuActivos">Reporte de estudiantes activos</a></li>
                         </ul>
                     </li>
 
-                    <!-- Perfil del Profesor -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Perfil del Profesor
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="perfilDropdown">
-                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/ActualizarDatos">Actualizar Datos Personales</a></li>
-                            <li><a class="dropdown-item" asp-page="/Frontend/profesor/HistorialGrupos">Consultar Historial de Grupos Impartidos</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -89,7 +91,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
-                        <h1>Avatar Profesores - Colegio Universitario de Cartago</h1>
+                        <h1>Avatar Administrador - Colegio Universitario de Cartago</h1>
                     </div>
                 </div>
             </div>

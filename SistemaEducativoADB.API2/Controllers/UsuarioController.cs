@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SistemaEducativoADB.API.Models.DTOs;
 using SistemaEducativoADB.API2.Models.DTOs;
 using SistemaEducativoADB.API2.Models.Entities;
@@ -21,8 +21,19 @@ namespace SistemaEducativoADB.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var Usuarios = await _service.GetAllUsuarios();
-            return Ok(Usuarios);
+            var usuarios = await _service.GetAllUsuarios();
+
+            var result = usuarios.Select(u => new {
+                u.IdUsuario,
+                u.nombre,
+                u.email,
+                u.Estado,
+                u.FechaCreacion,
+                IdRol = u.IdRol,
+                RolNombre = u.Rol != null ? u.Rol.NombreRol : string.Empty
+            });
+
+            return Ok(result);
         }
 
         [HttpGet("{id}")]
@@ -37,22 +48,23 @@ namespace SistemaEducativoADB.Controllers
         public async Task<IActionResult> CrearUsuario([FromBody] UsuarioCreateDto dto)
         {
             if (dto == null)
-                return BadRequest("Datos inv�lidos");
+                return BadRequest("Datos inválidos");
 
-            var Usuarios = new Usuario
+            var usuario = new Usuario
             {
-                IdUsuario = dto.IdUsuario,
                 nombre = dto.nombre,
                 email = dto.email,
                 contrasena = dto.contrasena,
-                FechaCreacion = dto.FechaCreacion
+                Estado = false, //se crea inactivo por defecto para que el admin lo active
+                FechaCreacion = DateTime.Now,
+                IdRol = 35 // Asignar el rol de "no definido" por defecto
             };
-       
 
-            await _service.AddUsuario(Usuarios);
+            await _service.AddUsuario(usuario);
 
-            return CreatedAtAction(nameof(GetById), new { id = Usuarios.IdUsuario }, Usuarios);
+            return CreatedAtAction(nameof(GetById), new { id = usuario.IdUsuario }, usuario);
         }
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] Usuario usuario)
@@ -68,5 +80,68 @@ namespace SistemaEducativoADB.Controllers
             await _service.DeleteUsuario(id);
             return NoContent();
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] UsuarioLoginDto dto)
+        {
+            Console.WriteLine($"Email: {dto.email}, Pass: {dto.contrasena}");
+
+            var usuario = await _service.Login(dto.email, dto.contrasena);
+            if (usuario == null)
+            {
+                Console.WriteLine("❌ No se encontró usuario.");
+                return Unauthorized("Credenciales inválidas");
+            }
+
+            Console.WriteLine($"✅ Usuario encontrado: {usuario.nombre}, Rol: {usuario.IdRol}");
+
+            var result = new
+            {
+                IdUsuario = usuario.IdUsuario,
+                nombre = usuario.nombre,
+                email = usuario.email,
+                id_rol = usuario.IdRol,
+                RolNombre = usuario.Rol.NombreRol
+            };
+
+            return Ok(result);
+        }
+
+        [HttpGet("inactivos")]
+        public async Task<IActionResult> GetInactivos()
+        {
+            var usuarios = await _service.GetAllUsuarios();
+
+            var result = usuarios
+                .Where(u => !u.Estado)
+                .Select(u => new {
+                    u.IdUsuario,
+                    u.nombre,
+                    u.email,
+                    u.Estado,
+                    u.FechaCreacion,
+                    IdRol = u.IdRol,
+                    RolNombre = u.Rol != null ? u.Rol.NombreRol : "No definido aún"
+                });
+
+            return Ok(result);
+        }
+
+        // Activar/Desactivar usuario
+        [HttpPut("cambiar-estado/{id}")]
+        public async Task<IActionResult> CambiarEstado(int id, [FromBody] bool nuevoEstado)
+        {
+            await _service.CambiarEstadoAsync(id, nuevoEstado);
+            return Ok(new { IdUsuario = id, Estado = nuevoEstado });
+        }
+
+        [HttpPut("cambiar-rol/{id}")]
+        public async Task<IActionResult> CambiarRol(int id, [FromBody] int nuevoRol)
+        {
+            await _service.CambiarRolAsync(id, nuevoRol);
+            return Ok(new { IdUsuario = id, IdRol = nuevoRol });
+        }
+
+
     }
 }

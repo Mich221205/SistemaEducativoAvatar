@@ -1,24 +1,24 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using System.Security.Principal;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaEducativoADB.API2.Models.Entities
 {
-
     public class Usuario
     {
-        public int IdUsuario { get; set; } // id_usuario
-        public string nombre { get; set; } // nombre
-        public string email { get; set; } // email
-        public string contrasena { get; set; } // contrasena
+        public int IdUsuario { get; set; }
+        public string nombre { get; set; } = string.Empty;
+        public string email { get; set; } = string.Empty;
+        public string contrasena { get; set; } = string.Empty;
+        public bool Estado { get; set; }
+        public DateTime FechaCreacion { get; set; }
 
-        public bool Estado { get; set; } // estado (1 = activo, 0 = inactivo)
-        
-        public DateTime FechaCreacion { get; set; } // fecha_creacion
+        public int IdRol { get; set; }
+        public Rol Rol { get; set; }
 
-        public Estudiante Estudiante { get; set; }
-        public Profesor Profesor { get; set; }
-        public int? IdRol { get; set; }
-        public Rol? Rol { get; set; }
+        [NotMapped] 
+        public string RolNombre { get; set; } = string.Empty;
+
+        public Estudiante? Estudiante { get; set; }
+        public Profesor? Profesor { get; set; }
     }
-
 }
+

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaEducativoADB.API2.Data;
+using SistemaEducativoADB.API2.Repositories.Implementations;
 using SistemaEducativoADB.API2.Repositories.Implementatios;
 using SistemaEducativoADB.API2.Repositories.Interfaces;
 using SistemaEducativoADB.API2.Services;

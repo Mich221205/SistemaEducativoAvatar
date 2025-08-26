@@ -3,48 +3,80 @@ using SistemaEducativoADB.API2.Data;
 using SistemaEducativoADB.API2.Models.Entities;
 using SistemaEducativoADB.API2.Repositories.Interfaces;
 
-namespace SistemaEducativoADB.API2.Repositories.Implementatios
+namespace SistemaEducativoADB.API2.Repositories.Implementations
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        private readonly DbContext _context;
+        private readonly DBContext _context;
 
         public UsuarioRepository(DBContext context)
         {
             _context = context;
         }
 
-        // Replace all occurrences of '_context.Usuarios' with '_context.Set<Usuario>()'
-        // This uses the generic Set<TEntity>() method of DbContext to access the Usuario DbSet.
-
         public async Task<IEnumerable<Usuario>> GetAllAsync()
         {
-            return await _context.Set<Usuario>().ToListAsync();
+            return await _context.Usuarios
+                .Include(u => u.Rol) 
+                .ToListAsync();
         }
 
-        public async Task<Usuario> GetByIdAsync(int id)
+        public async Task<Usuario?> GetByIdAsync(int id)
         {
-            return await _context.Set<Usuario>().FindAsync(id);
+            return await _context.Usuarios
+                .Include(u => u.Rol)
+                .FirstOrDefaultAsync(u => u.IdUsuario == id);
         }
 
-        public async Task AddAsync(Usuario Usuario)
+        public async Task AddAsync(Usuario usuario)
         {
-            await _context.Set<Usuario>().AddAsync(Usuario);
+            await _context.Usuarios.AddAsync(usuario);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(Usuario Usuario)
+        public async Task UpdateAsync(Usuario usuario)
         {
-            _context.Set<Usuario>().Update(Usuario);
+            _context.Usuarios.Update(usuario);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var Usuario = await GetByIdAsync(id);
-            if (Usuario != null)
+            var usuario = await GetByIdAsync(id);
+            if (usuario != null)
             {
-                _context.Set<Usuario>().Remove(Usuario);
+                _context.Usuarios.Remove(usuario);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        //Login
+        public async Task<Usuario?> LoginAsync(string email, string contrasena)
+        {
+            return await _context.Usuarios
+                .Include(u => u.Rol)
+                .FirstOrDefaultAsync(u =>
+                    u.email == email &&
+                    u.contrasena == contrasena &&
+                    u.Estado == true);
+        }
+
+        public async Task CambiarEstadoAsync(int id, bool nuevoEstado)
+        {
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario != null)
+            {
+                usuario.Estado = nuevoEstado;
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task CambiarRolAsync(int id, int nuevoRol)
+        {
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario != null)
+            {
+                usuario.IdRol = nuevoRol;
                 await _context.SaveChangesAsync();
             }
         }

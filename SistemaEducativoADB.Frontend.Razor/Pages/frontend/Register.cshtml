@@ -1,5 +1,5 @@
 ﻿@page
-@model SistemaEducativo.Frontend.Pages.Frontend.LoginModel
+@model SistemaEducativoADB.Frontend.Razor.Pages.frontend.RegisterModel
 @{
     Layout = null;
 }
@@ -16,7 +16,7 @@
           crossorigin="anonymous" />
     <link rel="stylesheet" href="~/css/main.css" />
     <link rel="stylesheet" href="~/css/normalize.css" />
-    <title>Login</title>
+    <title>Registrarse</title>
 </head>
 <body>
     <main class="login-design">
@@ -26,9 +26,18 @@
         <div class="login">
             <div class="login-data">
                 <img src="~/images/collab.png" alt="" />
-                <h1>Inicio de Sesión</h1>
+                <h1>Crear Cuenta</h1>
 
                 <form method="post" class="login-form">
+                    <div class="input-group">
+                        <label class="input-fill">
+                            <input asp-for="Nombre" type="text" required />
+                            <span class="input-label">Nombre</span>
+                            <i class="fas fa-user"></i>
+                        </label>
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
                     <div class="input-group">
                         <label class="input-fill">
                             <input asp-for="Email" type="email" required />
@@ -37,6 +46,7 @@
                         </label>
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
+
                     <div class="input-group">
                         <label class="input-fill">
                             <input asp-for="Password" type="password" required />
@@ -45,8 +55,18 @@
                         </label>
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
-                    <a href="/frontend/Register">¿Necesitas una Cuenta?</a>
-                    <input type="submit" value="Iniciar Sesión" class="btn-login" />
+
+                    <div class="input-group">
+                        <label class="input-fill">
+                            <input asp-for="ConfirmPassword" type="password" required />
+                            <span class="input-label">Confirmar Contraseña</span>
+                            <i class="fas fa-lock"></i>
+                        </label>
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+
+                    <a asp-page="/frontend/login">¿Ya tienes cuenta? Inicia sesión</a>
+                    <input type="submit" value="Registrarse" class="btn-login" />
                 </form>
 
                 @if (!string.IsNullOrEmpty(Model.Mensaje))

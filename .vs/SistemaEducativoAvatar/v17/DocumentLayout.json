@@ -1,32 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|c:\\users\\edtlu\\workspace\\sistemaeducativoavatar\\sistemaeducativoadb.api2\\controllers\\asistenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|solutionrelative:sistemaeducativoadb.api2\\controllers\\asistenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|c:\\users\\edtlu\\workspace\\sistemaeducativoavatar\\sistemaeducativoadb.api2\\services\\interfaces\\iasistenciaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|solutionrelative:sistemaeducativoadb.api2\\services\\interfaces\\iasistenciaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|c:\\users\\edtlu\\workspace\\sistemaeducativoavatar\\sistemaeducativoadb.api2\\repositories\\interfaces\\idetalle_pagosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|solutionrelative:sistemaeducativoadb.api2\\repositories\\interfaces\\idetalle_pagosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|c:\\users\\edtlu\\workspace\\sistemaeducativoavatar\\sistemaeducativoadb.api2\\repositories\\interfaces\\idetalle_matricularepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|solutionrelative:sistemaeducativoadb.api2\\repositories\\interfaces\\idetalle_matricularepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|c:\\users\\edtlu\\workspace\\sistemaeducativoavatar\\sistemaeducativoadb.api2\\repositories\\implementatios\\detalle_pagosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|solutionrelative:sistemaeducativoadb.api2\\repositories\\implementatios\\detalle_pagosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|c:\\users\\edtlu\\workspace\\sistemaeducativoavatar\\sistemaeducativoadb.api2\\models\\dtos\\periodo_lectivocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6DA6DA70-556E-627E-8E59-3D1F9F57415C}|SistemaEducativoADB.API2\\SistemaEducativoADB.API2.csproj|solutionrelative:sistemaeducativoadb.api2\\models\\dtos\\periodo_lectivocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\Michel\\workspace\\SistemaEducativoAvatar\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,12 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -87,84 +58,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IAsistenciaService.cs",
-              "DocumentMoniker": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Services\\Interfaces\\IAsistenciaService.cs",
-              "RelativeDocumentMoniker": "SistemaEducativoADB.API2\\Services\\Interfaces\\IAsistenciaService.cs",
-              "ToolTip": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Services\\Interfaces\\IAsistenciaService.cs",
-              "RelativeToolTip": "SistemaEducativoADB.API2\\Services\\Interfaces\\IAsistenciaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T21:35:27.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AsistenciaController.cs",
-              "DocumentMoniker": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Controllers\\AsistenciaController.cs",
-              "RelativeDocumentMoniker": "SistemaEducativoADB.API2\\Controllers\\AsistenciaController.cs",
-              "ToolTip": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Controllers\\AsistenciaController.cs",
-              "RelativeToolTip": "SistemaEducativoADB.API2\\Controllers\\AsistenciaController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAQwBYAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T21:34:42.121Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IDetalle_MatriculaRepository.cs",
-              "DocumentMoniker": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Repositories\\Interfaces\\IDetalle_MatriculaRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEducativoADB.API2\\Repositories\\Interfaces\\IDetalle_MatriculaRepository.cs",
-              "ToolTip": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Repositories\\Interfaces\\IDetalle_MatriculaRepository.cs",
-              "RelativeToolTip": "SistemaEducativoADB.API2\\Repositories\\Interfaces\\IDetalle_MatriculaRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T21:33:21.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IDetalle_PagosRepository.cs",
-              "DocumentMoniker": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Repositories\\Interfaces\\IDetalle_PagosRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEducativoADB.API2\\Repositories\\Interfaces\\IDetalle_PagosRepository.cs",
-              "ToolTip": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Repositories\\Interfaces\\IDetalle_PagosRepository.cs",
-              "RelativeToolTip": "SistemaEducativoADB.API2\\Repositories\\Interfaces\\IDetalle_PagosRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T21:31:26.695Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Detalle_PagosRepository.cs",
-              "DocumentMoniker": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Repositories\\Implementatios\\Detalle_PagosRepository.cs",
-              "RelativeDocumentMoniker": "SistemaEducativoADB.API2\\Repositories\\Implementatios\\Detalle_PagosRepository.cs",
-              "ToolTip": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Repositories\\Implementatios\\Detalle_PagosRepository.cs",
-              "RelativeToolTip": "SistemaEducativoADB.API2\\Repositories\\Implementatios\\Detalle_PagosRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T21:31:09.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Periodo_LectivoCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Models\\DTOs\\Periodo_LectivoCreateDto.cs",
-              "RelativeDocumentMoniker": "SistemaEducativoADB.API2\\Models\\DTOs\\Periodo_LectivoCreateDto.cs",
-              "ToolTip": "C:\\Users\\edtlu\\workspace\\SistemaEducativoAvatar\\SistemaEducativoADB.API2\\Models\\DTOs\\Periodo_LectivoCreateDto.cs",
-              "RelativeToolTip": "SistemaEducativoADB.API2\\Models\\DTOs\\Periodo_LectivoCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T21:30:49.007Z",
-              "EditorCaption": ""
             }
           ]
         },

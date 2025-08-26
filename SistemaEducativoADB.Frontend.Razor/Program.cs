@@ -17,6 +17,8 @@ namespace SistemaEducativoADB.Frontend.Razor
             // Services propios
             builder.Services.AddScoped<CarreraApiService>();
             builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+            builder.Services.AddScoped<GrupoApiService>();
+            builder.Services.AddScoped<EstudianteApiService>();
 
             // Autenticación con cookies (si luego lo quieres combinar con roles)
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

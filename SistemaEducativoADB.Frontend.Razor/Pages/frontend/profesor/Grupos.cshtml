@@ -13,34 +13,30 @@
                 <tr>
                     <th>Código Grupo</th>
                     <th>Curso</th>
-                    <th>Cuatrimestre</th>
-                    <th>Año</th>
-                    <th>Horario</th>
+                    <th>Aula</th>
+                    <th>Cupo Maximo</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Ejemplos de prueba -->
-                <tr>
-                    <td>G-101</td>
-                    <td>Programación I</td>
-                    <td>I</td>
-                    <td>2025</td>
-                    <td>Lunes y Miércoles 8:00 - 10:00</td>
-                </tr>
-                <tr>
-                    <td>G-205</td>
-                    <td>Bases de Datos</td>
-                    <td>II</td>
-                    <td>2025</td>
-                    <td>Martes y Jueves 10:00 - 12:00</td>
-                </tr>
-                <tr>
-                    <td>G-310</td>
-                    <td>Redes de Computadoras</td>
-                    <td>III</td>
-                    <td>2024</td>
-                    <td>Viernes 2:00 - 6:00</td>
-                </tr>
+                @if (Model.Grupos != null && Model.Grupos.Any())
+                {
+                    foreach (var grupo in Model.Grupos)
+                    {
+                        <tr>
+                            <td>@grupo.IdGrupo</td>
+                            <td>@grupo.Materia.Nombre</td>
+                            <td>@grupo.Aula</td>
+                            <td>@grupo.CupoMax</td>
+                            
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="2">No hay datos disponibles</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

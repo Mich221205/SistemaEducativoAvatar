@@ -19,6 +19,8 @@ namespace SistemaEducativoADB.Frontend.Razor
             builder.Services.AddScoped<IUsuarioService, UsuarioService>();
             builder.Services.AddScoped<GrupoApiService>();
             builder.Services.AddScoped<EstudianteApiService>();
+            builder.Services.AddScoped<ProfesorApiService>();
+            builder.Services.AddScoped<AsistenciaApiService>();
 
             // Autenticación con cookies (si luego lo quieres combinar con roles)
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -62,7 +64,7 @@ namespace SistemaEducativoADB.Frontend.Razor
 
             app.UseRouting();
 
-            // 🚀 IMPORTANTE: habilitar sesiones aquí, antes de Auth
+            //  IMPORTANTE: habilitar sesiones aquí, antes de Auth
             app.UseSession();
 
             app.UseAuthentication();

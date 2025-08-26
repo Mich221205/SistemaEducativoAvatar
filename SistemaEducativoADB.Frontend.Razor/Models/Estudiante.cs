@@ -11,6 +11,7 @@
 
 
         public Usuario Usuario { get; set; }
+        public Asistencia Asistencia { get; set; }
 
     }
 }

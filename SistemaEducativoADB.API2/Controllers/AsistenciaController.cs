@@ -33,29 +33,27 @@ namespace SistemaEducativoADB.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CrearAsistencia([FromBody] AsistenciaCreateDto dto)
+        public async Task<IActionResult> Create([FromBody] Asistencia asistencia)
         {
-            if (dto == null)
-                return BadRequest("Datos inválidos");
-
-            var asistencia = new Asistencia
-            {
-                IdGrupo = dto.IdGrupo,
-                IdProfesor = dto.IdProfesor,
-                IdEstudiante = dto.IdEstudiante,
-                eAsistencia = dto.eAsistencia,
-                Fecha = dto.Fecha ?? DateTime.Now
-            };
-
             await _service.AddAsistencia(asistencia);
 
-            return CreatedAtAction(nameof(GetById), new { id = asistencia.IdAsistencia }, asistencia);
-        }
+            
+            return Ok(asistencia);
 
+    
+            return Ok(new { success = true, message = "Asistencia creada correctamente" });
+        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] Asistencia asistencia)
         {
+            if (id == 0)
+            {
+                
+                await _service.AddAsistencia(asistencia);
+                return Ok(asistencia);
+            }
+
             if (id != asistencia.IdAsistencia) return BadRequest();
             await _service.UpdateAsistencia(asistencia);
             return NoContent();

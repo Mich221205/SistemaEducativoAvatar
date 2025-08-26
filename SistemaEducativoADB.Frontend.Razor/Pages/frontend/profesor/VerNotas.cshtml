@@ -21,31 +21,30 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Ejemplo de datos quemados -->
-                <tr>
-                    <td>2025001</td>
-                    <td>Ana López</td>
-                    <td>Programación I</td>
-                    <td>G-101</td>
-                    <td>90</td>
-                    <td><span class="badge bg-success">Aprobado</span></td>
-                </tr>
-                <tr>
-                    <td>2025002</td>
-                    <td>Carlos Méndez</td>
-                    <td>Programación I</td>
-                    <td>G-101</td>
-                    <td>55</td>
-                    <td><span class="badge bg-danger">Reprobado</span></td>
-                </tr>
-                <tr>
-                    <td>2025003</td>
-                    <td>Laura Jiménez</td>
-                    <td>Bases de Datos</td>
-                    <td>G-205</td>
-                    <td>0</td>
-                    <td><span class="badge bg-warning text-dark">Cursando</span></td>
-                </tr>
+                @foreach (var nota in Model.Notas)
+                {
+                    <tr>
+                        <td>@nota.Carnet</td>
+                        <td>@nota.Nombre</td>
+                        <td>@nota.Materia</td>
+                        <td>@nota.Grupo</td>
+                        <td>@nota.Nota</td>
+                        <td>
+                            @if (nota.Condicion == "Aprobado")
+                            {
+                                <span class="badge bg-success">Aprobado</span>
+                            }
+                            else if (nota.Condicion == "Reprobado")
+                            {
+                                <span class="badge bg-danger">Reprobado</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning text-dark">Cursando</span>
+                            }
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

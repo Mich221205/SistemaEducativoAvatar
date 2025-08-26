@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using SistemaEducativoADB.Frontend.Razor.Services;
+
 
 namespace SistemaEducativoADB.Frontend.Razor
 {

@@ -19,6 +19,26 @@ namespace SistemaEducativoADB.Controllers
             _service = service;
         }
 
+        [HttpGet("datos-profesor/{idUsuario}")]
+        public async Task<IActionResult> GetDatosProfesor(int idUsuario)
+        {
+            var usuario = await _service.GetUsuarioById(idUsuario);
+
+            if (usuario == null || usuario.Profesor == null)
+                return NotFound();
+
+            var dto = new ActualizarProfesorDto
+            {
+                Cedula = usuario.Profesor.Cedula,
+                Nombre = usuario.nombre,
+                CorreoPersonal = usuario.Profesor.CorreoPersonal,
+                Telefono = usuario.Profesor.Telefono
+            };
+
+            return Ok(dto);
+        }
+
+
         // GET: api/Usuario/estudiantes/activos
         [HttpGet("estudiantes/activos")]
         public async Task<IActionResult> GetEstudiantesActivos()
@@ -85,6 +105,37 @@ namespace SistemaEducativoADB.Controllers
             await _service.AddUsuario(usuario);
 
             return CreatedAtAction(nameof(GetById), new { id = usuario.IdUsuario }, usuario);
+        }
+
+        [HttpPut("actualizar-profesor/{idUsuario}")]
+        public async Task<IActionResult> ActualizarDatosProfesor(int idUsuario, [FromBody] ActualizarProfesorDto dto)
+        {
+            var usuario = await _service.GetUsuarioById(idUsuario);
+
+            if (usuario == null || usuario.Profesor == null)
+                return NotFound();
+
+            // Actualizar los campos
+            usuario.nombre = dto.Nombre;
+            usuario.Profesor.Cedula = dto.Cedula;
+            usuario.Profesor.CorreoPersonal = dto.CorreoPersonal;
+            usuario.Profesor.Telefono = dto.Telefono;
+
+            await _service.UpdateUsuario(usuario);
+
+            return Ok(new { mensaje = "Datos actualizados correctamente" });
+        }
+
+
+
+        [HttpPut("actualizar/{idUsuario}")]
+        public async Task<IActionResult> ActualizarDatos(int idUsuario, [FromBody] ActualizarProfesorDto dto)
+        {
+            if (dto == null) return BadRequest("Datos inválidos");
+
+            await _service.ActualizarDatosProfesorAsync(idUsuario, dto);
+
+            return Ok(new { Message = "Datos actualizados correctamente" });
         }
 
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaEducativoADB.API2.Data;
+using SistemaEducativoADB.API2.Models.DTOs;
 using SistemaEducativoADB.API2.Models.Entities;
 using SistemaEducativoADB.API2.Repositories.Interfaces;
 
@@ -14,6 +15,29 @@ namespace SistemaEducativoADB.API2.Repositories.Implementations
             _context = context;
         }
 
+        public async Task ActualizarDatosProfesorAsync(int idUsuario, ActualizarProfesorDto dto)
+        {
+            // Actualizar tabla USUARIOS
+            var usuario = await _context.Usuarios.FindAsync(idUsuario);
+            if (usuario != null)
+            {
+                usuario.nombre = dto.Nombre;
+                usuario.email = dto.Email;
+            }
+
+            // Actualizar tabla PROFESORES
+            var profesor = await _context.Profesores.FirstOrDefaultAsync(p => p.IdUsuario == idUsuario);
+            if (profesor != null)
+            {
+                profesor.Cedula = dto.Cedula;
+                profesor.Telefono = dto.Telefono;
+                profesor.CorreoPersonal = dto.CorreoPersonal;
+            }
+
+            await _context.SaveChangesAsync();
+        }
+
+
         public async Task<IEnumerable<Usuario>> GetAllAsync()
         {
             return await _context.Usuarios
@@ -27,8 +51,11 @@ namespace SistemaEducativoADB.API2.Repositories.Implementations
         {
             return await _context.Usuarios
                 .Include(u => u.Rol)
+                .Include(u => u.Profesor)   // 👈 traer también la relación
+                .Include(u => u.Estudiante)
                 .FirstOrDefaultAsync(u => u.IdUsuario == id);
         }
+
 
         public async Task AddAsync(Usuario usuario)
         {

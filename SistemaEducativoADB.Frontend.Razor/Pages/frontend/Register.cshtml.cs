@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SistemaEducativoADB.Frontend.Razor.Models;
+using SistemaEducativoADB.Frontend.Razor.Services;
+
 
 namespace SistemaEducativoADB.Frontend.Razor.Pages.frontend
 {
